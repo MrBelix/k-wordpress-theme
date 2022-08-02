@@ -1,6 +1,6 @@
 <section class="slider-block">
   @if($title)
-    <h2 class="slider-block__title">{{$title}}</h2>
+    <h2 class="slider-block__title">{!! $title !!}</h2>
   @endif
   <div class="swiper">
     @if($items)

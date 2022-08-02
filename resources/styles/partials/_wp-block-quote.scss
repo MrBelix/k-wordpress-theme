@@ -1,11 +1,15 @@
 .wp-block-quote {
   color: #8EBEC8;
-  margin: 60px auto;
+  margin: 120px auto;
   position: relative;
   display: flex;
   justify-content: center;
-  max-width: 1060px;
+  max-width: 1200px;
   width: calc(100% - 20vw);
+
+  @include mobile {
+    margin: 60px auto;
+  }
 
   p {
     position: relative;
@@ -14,6 +18,7 @@
     font-weight: 700;
     font-size: 48px;
     text-align: center;
+    padding: 0;
 
     @include mobile {
       font-size: 24px;

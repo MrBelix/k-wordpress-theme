@@ -1,0 +1,82 @@
+.partners-modal {
+  h2 {
+    font-size: 48px;
+    font-weight: 700;
+
+    @include mobile {
+      display: none;
+    }
+  }
+
+  &__main {
+    display: flex;
+    justify-content: space-between;
+
+    @include mobile {
+      flex-direction: column;
+    }
+
+    & > div {
+      @include desktop {
+        width: 46%;
+        padding: 60px 0;
+      }
+
+      &:first-child {
+        font-size: 32px;
+        font-weight: 500;
+        @include mobile {
+          font-size: 22px;
+        }
+      }
+
+      &:last-child {
+        font-weight: 500;
+        font-size: 20px;
+
+        @include mobile {
+          margin-top: 40px;
+        }
+
+        @include desktop {
+          padding-left: 35px;
+          border-left: 1px solid white;
+          font-size: 24px;
+        }
+      }
+    }
+  }
+
+  &__footer {
+    margin-top: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include mobile {
+      flex-direction: column;
+      align-items: flex-start;
+      margin-top: 60px;
+      margin-bottom: 60px;
+
+      svg {
+        display: none;
+      }
+
+      & > div {
+        margin: 5px 0;
+      }
+    }
+
+    h3, h4 {
+      margin: 0;
+      font-size: 22px;
+      font-weight: 500;
+    }
+
+    h3 {
+      color: $color-primary;
+      font-weight: 700;
+    }
+  }
+}

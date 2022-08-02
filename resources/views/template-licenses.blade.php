@@ -46,5 +46,5 @@
       {!! get_the_content() !!}
     </section>
   </div>
-  @include('blocks.projects-slider', $slider)
+  @include('blocks.projects-slider-block', $slider)
 @endsection

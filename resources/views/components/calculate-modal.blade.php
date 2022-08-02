@@ -1,6 +1,4 @@
-@extends('components.modal')
 
-@section('modal_content')
   <form id="calculate-modal" class="calculate-modal">
     <div>
       <div class="input-group">
@@ -61,4 +59,3 @@
       <button type="submit" class="wp-block-button__link">{{pll__('Отримати розрахунок')}}</button>
     </div>
   </form>
-@endsection

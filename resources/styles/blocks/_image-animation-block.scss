@@ -3,7 +3,7 @@
   overflow: hidden;
 
   @include desktop {
-    margin: 130px 0;
+    margin: 120px 0;
   }
 
   &__container {
@@ -14,7 +14,7 @@
 
     @include desktop {
       max-width: 90%;
-      margin: 60px auto;
+      margin: 60px auto 0;
       flex-direction: row;
     }
 
@@ -65,15 +65,22 @@
     margin-bottom: 0;
     font-weight: 700;
     font-size: 30px;
+    margin-top: 0;
+    padding: 0 25px;
 
     @include desktop {
       font-size: 55px;
       margin-bottom: 15px;
+
+
+      br {
+        display: none;
+      }
     }
   }
 
   h3 {
-    margin-top: 0;
+    margin-top: 5px;
     margin-bottom: 30px;
     font-size: 20px;
 

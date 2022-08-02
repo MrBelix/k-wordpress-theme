@@ -3,6 +3,7 @@ import Swiper from "swiper/bundle";
 class ImageSlider {
   constructor(selector) {
     this.selector = selector;
+
   }
 
   register() {
@@ -17,6 +18,7 @@ class ImageSlider {
       }
     })
   }
+
 }
 
 export default ImageSlider

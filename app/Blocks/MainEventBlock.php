@@ -16,7 +16,7 @@ class MainEventBlock extends Block
 
         return [
             'year' => get_field('year'),
-            'event' => new Event($event)
+            'event' => $event?new Event($event) : null,
         ];
     }
 

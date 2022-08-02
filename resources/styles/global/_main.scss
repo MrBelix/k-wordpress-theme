@@ -1,12 +1,22 @@
 html {
-  background-color: $background-color;
   color: #FFFFFF;
   font-family: 'Cera Pro', sans-serif;
   font-size: 20px;
+  overflow-x: hidden;
 }
 
 body {
-  box-sizing: border-box;
+  background: linear-gradient(180deg, #15232B 21.07%, #1D4359 51.56%, #18252D 72.87%);
+
+  &.home {
+    background: $background-color;
+  }
+}
+
+body {
+  * {
+    box-sizing: border-box;
+  }
 }
 
 .mobile {
@@ -43,3 +53,17 @@ body {
   }
 }
 
+img {
+  display: block;
+  width: 100%;
+  object-fit: cover;
+}
+
+.home-content {
+  @include mobile {
+    padding: 0 25px;
+  }
+  @include desktop {
+    text-align: center !important;
+  }
+}

@@ -29,6 +29,7 @@
       position: relative;
       grid-gap: 30px;
       margin-top: 40px;
+      padding: 0 25px;
     }
 
     @include mobile {
@@ -36,7 +37,11 @@
       flex-direction: column;
       flex-wrap: wrap;
       justify-content: space-between;
-      align-items: center;
+      align-items: flex-start;
+
+      & > div {
+        padding: 0 26px;
+      }
     }
 
     .menu {
@@ -87,6 +92,7 @@
       text-align: center;
       @include mobile {
         margin-top: 60px;
+        width: 100% ;
       }
 
       @include desktop {

@@ -7,19 +7,18 @@ use StoutLogic\AcfBuilder\FieldsBuilder;
 
 class VideoSliderBlock extends Block
 {
-    public $name = "Video Slider Block";
+    public $name = "Home Video Slider Block";
 
     public function with()
     {
         $fields = get_fields();
 
         return [
-            'title' => $fields['title']??null,
+            'link' => $fields['link']??null,
             'videos' => array_map(function ($item){
                 return [
                     'title' => $item['title'],
                     'iframe' => $item['iframe'],
-                    'district' => config('districts')[$item['district']]
                 ];
             }, $fields['videos'])
         ];
@@ -27,17 +26,12 @@ class VideoSliderBlock extends Block
 
     public function fields()
     {
-        $fields = new FieldsBuilder('video-slider-block');
+        $fields = new FieldsBuilder('home-video-slider-block');
 
-        $fields->addText('title')
+        $fields->addLink('link')
             ->addRepeater('videos')
                 ->addText('title')
                 ->addText('iframe')
-                ->addSelect('district', [
-                    'choices' => array_map(function ($item) {
-                        return pll__($item);
-                    }, config('districts'))
-                ])
             ->endRepeater();
 
         return $fields->build();

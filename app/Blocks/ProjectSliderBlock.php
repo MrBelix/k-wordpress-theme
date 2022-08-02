@@ -20,7 +20,7 @@ class ProjectSliderBlock extends Block
             'link' => $fields['link']??null,
             'projects' => array_map(
                 [ProjectSliderMapper::class, 'mapStatic'],
-                $fields['projects']??[]
+                array_column($fields['projects'], 'project')??[]
             )
         ];
     }

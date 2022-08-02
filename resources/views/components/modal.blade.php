@@ -1,4 +1,7 @@
-<div class="modal">
+<div class="modal" data-trigger="{{$trigger}}">
+  <div class="mobile">
+    @include('partials.languages')
+  </div>
   <div class="modal__close">
     <svg width="59" height="59" viewBox="0 0 59 59" fill="none" xmlns="http://www.w3.org/2000/svg">
       <g filter="url(#filter0_f_521_4039)">
@@ -15,6 +18,6 @@
     </svg>
   </div>
   <div class="modal__content">
-    @yield('modal_content')
+    @include($content)
   </div>
 </div>

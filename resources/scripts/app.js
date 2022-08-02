@@ -9,6 +9,8 @@ import LicensesSlider from "@scripts/libs/LicensesSlider";
 import AcknowledgmentsSlider from "@scripts/libs/AcknowledgmentsSlider";
 import Choices from "choices.js";
 import ImageSlider from "@scripts/libs/ImageSlider";
+import VideoSlider from "@scripts/libs/VideoSlider";
+import Modal from "@scripts/libs/Modal";
 
 /**
  * app.main
@@ -43,14 +45,20 @@ const main = async (err) => {
   const imageSlider = new ImageSlider('.projects-slider-block .swiper')
   imageSlider.register();
 
-  const videoSlider = new ImageSlider('.video-slider-block .swiper');
+  const videoSlider = new VideoSlider('.home-video-slider-block .swiper');
   videoSlider.register()
+
+  const modal = new Modal('.modal', 'data-trigger')
+  modal.register();
 
   document.querySelectorAll('.vid').forEach(x => x.play())
 
   document.querySelectorAll('.input-group.select select').forEach(x => {
     new Choices(x, {
-      searchEnabled: x.getAttribute('data-search')?? false
+      searchEnabled: x.getAttribute('data-search')?? false,
+      classNames: {
+        flippedState: null,
+      }
     })
   })
 

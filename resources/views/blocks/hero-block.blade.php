@@ -4,6 +4,9 @@
       <source src="{{$background['url']}}">
     </video>
   @endif
+  <div class="mobile">
+    @include('partials.languages')
+  </div>
     <div class="hero-block__content">
       <div class="mobile">
         @include('partials.hero-block-logo')
@@ -16,7 +19,7 @@
         <a href="{{$phoneUrl}}" class="wp-block-button__link">{{$phone}}</a>
       </div>
       <div class="wp-block-button is-style-outline">
-        <a href="#calculate-project-modal" class="wp-block-button__link">{{pll__('Розрахувати проект')}}</a>
+        <a href="#calculate-modal" class="wp-block-button__link">{{pll__('Розрахувати проект')}}</a>
       </div>
     </div>
 </section>

@@ -1,13 +1,14 @@
 <section class="main-event-block">
   <h2 class="main-event-block__year">{{$year}}</h2>
 
+  @if($event)
   <div class="main-event-block__block">
-    <h2 class="mobile">{{$event->post_title}}</h2>
+    <h2 class="mobile">{{$event->getTitle()}}</h2>
     <div class="main-event-block__block-thumbnail">
-      <img src="{{get_the_post_thumbnail_url($event)}}" alt="{{$event->post_title}}">
+      <img src="{{$event->getThumbnail()}}" alt="{{$event->getTitle()}}">
     </div>
     <div class="main-event-block__block-info">
-      <h2 class="desktop">{{$event->post_title}}</h2>
+      <h2 class="desktop">{{$event->getTitle()}}</h2>
       <div>
         <svg width="59" height="59" viewBox="0 0 59 59" fill="none" xmlns="http://www.w3.org/2000/svg">
           <g filter="url(#filter0_d_521_3200)">
@@ -26,7 +27,7 @@
             </filter>
           </defs>
         </svg>
-        {{$eventFields['date']}}
+        {{$event->getDate()}}
       </div>
       <div>
         <svg width="52" height="65" viewBox="0 0 52 65" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -46,30 +47,31 @@
             </filter>
           </defs>
         </svg>
-        {{$eventFields['address']}}
+        {{$event->getAddress()}}
       </div>
     </div>
   </div>
 
   <div class="main-event-block__content">
-    <h3>{{$eventFields['text']}}</h3>
+    <h3>{{$event->getText()}}</h3>
 
     <div class="main-event-block__content-lists">
       <div class="main-event-block__content-left">
         <ul>
-          @foreach($eventFields['left-list'] as $item)
+          @foreach($event->getLeftList() as $item)
             <li>{{$item['text']}}</li>
           @endforeach
         </ul>
       </div>
       <div class="main-event-block__content-right">
-        <h4>{{$eventFields['right-text']}}</h4>
+        <h4>{{$event->getRightText()}}</h4>
         <ul>
-          @foreach($eventFields['right-list'] as $item)
+          @foreach($event->getRightList() as $item)
             <li><div class="circle"></div>{{$item['text']}}</li>
           @endforeach
         </ul>
       </div>
     </div>
   </div>
+  @endif
 </section>
