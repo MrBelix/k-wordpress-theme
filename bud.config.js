@@ -12,14 +12,14 @@ module.exports = async (app) => {
      */
     .entry({
       app: ['@scripts/app', '@styles/app'],
-      editor: ['@scripts/editor', '@styles/editor'],
+      editor: ['@styles/editor'],
+      fonts: ['@styles/fonts']
     })
-
     /**
      * These files should be processed as part of the build
      * even if they are not explicitly imported in application assets.
      */
-    .assets('images')
+
 
     /**
      * These files will trigger a full page reload
@@ -32,7 +32,7 @@ module.exports = async (app) => {
      *
      * This should be the URL you use to visit your local development server.
      */
-    .proxy('http://example.test')
+    .proxy('http://karkas-group.loc')
 
     /**
      * Development URL to be used in the browser.

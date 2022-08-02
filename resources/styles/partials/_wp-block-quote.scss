@@ -1,0 +1,56 @@
+.wp-block-quote {
+  color: #8EBEC8;
+  margin: 60px auto;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  max-width: 1060px;
+  width: calc(100% - 20vw);
+
+  p {
+    position: relative;
+    z-index: 2;
+    margin: 0;
+    font-weight: 700;
+    font-size: 48px;
+    text-align: center;
+
+    @include mobile {
+      font-size: 24px;
+    }
+
+    @media (max-width: 425px) {
+      font-size: 18px;
+    }
+
+    &:before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: 1;
+      transform: translate(-90%, -50%);
+      width: 9.3vw;
+      height: 7.4vw;
+      max-width: 180px;
+      max-height: 144px;
+      background: url(~@images/quotted1.svg) no-repeat;
+      background-size: 100%; //propotional resize
+    }
+
+    &:after {
+      content: '';
+      width: 3.6vw;
+      height: 2.8vw;
+      max-height: 55px;
+      max-width: 70px;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      transform: translate(90%, 50%);
+      z-index: 1;
+      background: url(~@images/quotted2.svg) no-repeat;
+      background-size: 100%; //propotional resize
+    }
+  }
+}

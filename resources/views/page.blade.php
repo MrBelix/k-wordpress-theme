@@ -1,8 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-  @while(have_posts()) @php(the_post())
-    @include('partials.page-header')
-    @includeFirst(['partials.content-page', 'partials.content'])
-  @endwhile
+  @include('partials.page-hero-section', ['title' => get_the_title(), 'background' => get_the_post_thumbnail_url()])
+  {!! the_content() !!}
 @endsection

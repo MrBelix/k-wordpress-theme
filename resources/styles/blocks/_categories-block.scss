@@ -1,0 +1,144 @@
+.categories-block {
+  position: relative;
+  margin: 100px 0;
+
+  @include desktop {
+    margin: 150px 0;
+
+    &:before {
+      content: '';
+      position: absolute;
+      background: linear-gradient(180deg, #15232B 0%, rgba(21, 35, 43, 0) 66.23%);
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 1;
+    }
+  }
+
+  &__title {
+    position: relative;
+    z-index: 10;
+    font-size: 64px;
+    font-weight: 700;
+    color: $color-primary;
+    text-align: center;
+    margin: 0 auto;
+    max-width: 1200px;
+    transform: translateY(-50%);
+
+    @include mobile {
+      display: none;
+    }
+  }
+
+  &__desktop {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 200px 0;
+
+    @include mobile {
+      display: none;
+    }
+
+    &-background {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      top: 0;
+      z-index: 0;
+      opacity: 0;
+      pointer-events: none;
+      transition: all ease-in-out 0.2s;
+
+      &.active {
+        opacity: 1;
+      }
+    }
+
+    &-item {
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 32px;
+      background: rgba(0, 0, 0, 0.45);
+      height: 240px;
+      border: 1px solid white;
+      cursor: pointer;
+      text-decoration: none;
+      color: white;
+      transition: all ease-in-out 0.2s;
+      z-index: 10;
+
+      &.active {
+        background: transparent;
+        text-shadow: 2px 1px 2px rgba(0, 0, 0, 0.2), 0px 0px 20px rgba(255, 198, 10, 0.6);
+        box-shadow: 0px 0px 20px #FFC60A;
+      }
+    }
+  }
+
+  &__mobile {
+    @include desktop {
+      display: none;
+    }
+
+    h3 {
+      font-weight: 700;
+      font-size: 32px;
+      text-align: center;
+      color: #FFFFFF;
+      text-shadow: 2px 1px 2px rgba(0, 0, 0, 0.2), 0px 0px 20px rgba(255, 198, 10, 0.6);
+      margin-bottom: 15px;
+      height: 75px;
+    }
+
+    .wp-block-button {
+      text-align: center;
+      padding: 0 26px;
+
+      &__link {
+        margin: 15px auto 0;
+        display: block;
+        max-width: 350px;
+        font-weight: 700;
+        font-size: 18px;
+      }
+    }
+
+    .swiper {
+
+      &-slide {
+        display: flex;
+        flex-direction: column;
+
+        img {
+          object-fit: cover;
+          width: 100%;
+          height: 50vw;
+          max-height: 500px;
+        }
+      }
+
+      &-button {
+        background: rgba(255, 255, 255, 0.13);
+        backdrop-filter: blur(20px);
+        border-radius: 5px;
+        width: 53px;
+        height: 53px;
+        color: white;
+
+        &::after {
+          font-size: 40px;
+        }
+      }
+    }
+  }
+}

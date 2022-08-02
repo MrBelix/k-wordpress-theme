@@ -1,0 +1,63 @@
+.page-hero-section {
+  position: relative;
+
+  @include desktop {
+    min-height: 100vh;
+    height: 100%;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 2;
+      background: linear-gradient(178.13deg, rgba(21, 35, 43, 0) 38.13%, rgba(21, 35, 43, 0.89) 79.54%, #15232B 98.42%);
+    }
+  }
+
+  &__background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 1;
+
+    @include mobile {
+      display: none;
+    }
+  }
+
+  &__content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 3;
+
+    @include desktop {
+      position: absolute;
+    }
+
+    @include mobile {
+      padding-top: 80px;
+    }
+  }
+
+  &__title {
+    font-weight: 700;
+    line-height: 80px;
+    font-size: 30px;
+    margin: 0;
+
+    @include desktop {
+      font-size: 64px;
+    }
+  }
+}

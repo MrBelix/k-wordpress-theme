@@ -1,0 +1,63 @@
+.splide {
+  &__slide {
+    position: relative;
+
+    img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+  }
+
+  &__arrow {
+    position: absolute;
+    width: 53px;
+    height: 53px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    border: none;
+    background: rgba(21, 35, 43, 0.22);
+    backdrop-filter: blur(10px);
+    z-index: 10;
+
+    svg {
+      stroke: currentColor;
+      fill: currentColor;
+    }
+
+    &[disabled] {
+      display: none;
+    }
+
+    &--prev {
+      left: 0;
+      transform: translateY(-50%) rotate(180deg);
+    }
+
+    &--next {
+      right: 0;
+    }
+  }
+
+  &.arrow-fill {
+    &__arrow {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+
+      svg {
+        stroke: currentColor;
+        fill: currentColor;
+      }
+
+      &[disabled] {
+        display: none;
+      }
+
+      &--prev {
+        transform: rotate(180deg);
+      }
+    }
+  }
+}

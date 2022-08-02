@@ -1,0 +1,121 @@
+.input-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 30px;
+  position: relative;
+
+  label {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 5px;
+  }
+
+  .choices {
+    font-size: 20px;
+
+    &:after {
+      background: url(~@images/select-arrow.svg) no-repeat;
+      border: none!important;
+      width: 1em!important;
+      height: 1em!important;
+      transform: translateY(-50%);
+      margin-top: 0 !important;
+      transition: transform ease-in-out 0.2s;
+    }
+
+    &.is-open {
+      border-radius: 10px;
+
+      &::after {
+        transform: translateY(-50%) rotate(180deg);
+      }
+
+      .choices__inner {
+        border-radius: 10px 10px 0 0;
+        border: 1px solid #FFC60A;
+        box-shadow: 0px 0px 10px rgba(255, 198, 10, 0.5);
+      }
+    }
+
+    &__inner {
+      background: #233743;
+      color: white;
+      font-size: 1em;
+      padding: 20px 26px !important;
+      border: 1px solid transparent;
+      border-radius: 10px;
+    }
+
+    &__list {
+      background: #233743;
+      color: white;
+
+      &--dropdown {
+        border: 1px solid #FFC60A;
+        box-shadow: 0px 0px 10px rgba(255, 198, 10, 0.5) !important;
+        z-index: 52 !important;
+        border-radius: 0 0 10px 10px !important;
+
+        .choices__item {
+          font-size: 20px !important;
+        }
+      }
+
+      &--single {
+        padding: 0 !important;
+        .choices__item {
+          padding: 0 !important;
+          border: none !important;
+        }
+      }
+    }
+
+    &__item {
+      border-bottom: 1px solid #476170;
+      padding: 18px 26px !important;
+
+      &.is-highlighted {
+        background-color: #233743 !important;
+        color: $color-primary;
+      }
+    }
+
+    input {
+      border: 1px solid transparent;
+      background-color: #233743 !important;
+      color: white;
+      font-weight: 400;
+      font-size: 20px;
+      padding: 20px 26px;
+      border-radius: 0 !important;
+
+      &:focus {
+        border: none!important;
+        box-shadow: none !important;
+      }
+    }
+  }
+
+  input,
+  select {
+    border: 1px solid transparent;
+    background: #233743;
+    border-radius: 10px;
+    color: white;
+    font-weight: 400;
+    font-size: 20px;
+    padding: 20px 26px;
+    width: 100%;
+
+    &:focus, &:focus-visible {
+      border: 1px solid #FFC60A;
+      box-shadow: 0px 0px 10px rgba(255, 198, 10, 0.5);
+      border-radius: 10px;
+      outline-width: 0;
+    }
+  }
+
+  select {
+    appearance: none;
+  }
+}

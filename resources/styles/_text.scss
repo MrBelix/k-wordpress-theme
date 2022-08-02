@@ -1,0 +1,21 @@
+
+h2 {
+  padding: 0 25px;
+  font-size: 1.5rem;
+  margin-bottom: 0.5em;
+
+  @include desktop {
+    font-size: 2.75rem
+  }
+}
+
+p {
+  font-size: 1.1rem;
+  max-width: 1344px;
+  margin: 0 auto;
+  padding: 0 25px;
+
+  @include desktop {
+    font-size: 1.8rem;
+  }
+}

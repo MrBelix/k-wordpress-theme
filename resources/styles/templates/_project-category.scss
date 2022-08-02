@@ -1,0 +1,130 @@
+.project-category {
+  margin: 0 auto;
+
+  @include desktop {
+    max-width: 90%;
+  }
+
+  &__item {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    margin: 50px 0;
+    flex-direction: column;
+
+    &:before {
+      content: '';
+      position: absolute;
+      z-index: 1;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 50%;
+      background: rgba(0, 0, 0, 0.59);
+      backdrop-filter: blur(50px);
+    }
+
+    @include desktop {
+      margin: 160px 0;
+      flex-direction: row;
+    }
+
+    @include desktop {
+      &::before {
+        z-index: 3;
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translate(-50%, -50%);
+        background-color: $color-primary;
+        height: 300px;
+        width: 10vw;
+      }
+
+      &:nth-child(2n) {
+        flex-direction: row-reverse;
+
+        &:before {
+          left: auto;
+          right: 0;
+          transform: translate(50%, -50%);
+        }
+      }
+    }
+
+    @include mobile {
+      .single-project__content {
+        position: relative;
+        padding: 10px;
+        width: 90%;
+        margin: 0 auto;
+        z-index: 2;
+
+        &:after {
+          content: url(~@images/card-arrow.svg);
+          position: absolute;
+          right: 0;
+          top: 50%;
+          transform: translateY(-50%);
+        }
+
+        h2 {
+          margin: 0;
+          font-size: 22px;
+        }
+        h3 {
+          font-size: 16px;
+          margin: 0;
+        }
+      }
+      .single-project__info {
+        display: none;
+      }
+    }
+
+    img {
+      position: relative;
+      z-index: 2;
+      height: 100%;
+      object-fit: cover;
+      transition: all ease-in-out 0.2s;
+
+      @include mobile {
+        width: 90%;
+        margin: 0 auto;
+      }
+
+      &:hover {
+      box-shadow: 0 0 50px #FFC60A;
+      }
+    }
+  }
+
+  &__links {
+    display: flex;
+    justify-content: center;
+    padding: 0 20px;
+
+    .wp-block-button {
+      width: 100%;
+      max-width: 370px;
+
+      &:first-child {
+        margin-right: 30px;
+
+        @include mobile {
+          margin-right: 11px
+        }
+      }
+
+      &__link {
+        display: block;
+
+        @media (max-width: 320px) {
+          font-size: 16px;
+        }
+      }
+    }
+  }
+}

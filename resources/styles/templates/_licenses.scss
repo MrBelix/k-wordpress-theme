@@ -1,0 +1,155 @@
+.licenses-template {
+  &__content {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+    margin: 0 auto;
+    max-width: 1440px;
+    align-items: center;
+
+    @include mobile {
+      text-align: center;
+    }
+
+
+    .acknowledgments-slider {
+      margin-top: 40px;
+      width: 100%;
+
+      @include desktop {
+        order: 3;
+
+        .swiper {
+          padding: 50px;
+
+          &-slide {
+
+            &-active {
+              box-shadow: 0px 0px 20px #FFC60A;
+              transform: scale(1.1);
+            }
+          }
+        }
+      }
+
+      h2 {
+        text-align: center;
+        font-size: 30px;
+
+        @include desktop {
+          font-size: 64px;
+        }
+      }
+
+
+      img {
+        padding: 0 40px;
+
+        @include desktop {
+          padding: 0;
+        }
+      }
+    }
+
+    .licenses-slider {
+      position: relative;
+      margin: 0 auto;
+      width: 100%;
+
+      .swiper {
+
+        &-slide {
+          padding-bottom: 90px;
+          @include mobile {
+            padding-bottom: 50px;
+          }
+        }
+
+        &::after {
+          position: absolute;
+          margin-top: 50px;
+          content: '';
+          bottom: 0;
+          z-index: 1;
+          left: 0;
+          right: 0;
+          height: 50px;
+          background: #3F525C;
+          border-radius: 30px 30px 0px 0px;
+
+          @include desktop {
+            height: 90px;
+          }
+        }
+      }
+
+      @include desktop {
+        order: 2;
+        width: 50%;
+      }
+
+      img {
+        padding: 0 40px;
+
+        @include desktop {
+          padding: 0 80px;
+        }
+      }
+    }
+
+    .content-block {
+      @include desktop {
+        order: 1;
+        width: 50%;
+        display: flex;
+        height: 100%;
+        justify-content: space-between;
+        flex-direction: column;
+      }
+
+      h2 {
+        font-size: 32px;
+
+        @include desktop {
+          font-size: 60px;
+        }
+      }
+
+      p {
+        font-size: 24px;
+
+        @include desktop {
+          font-size: 32px;
+        }
+      }
+    }
+  }
+}
+
+.acknowledgments-slider,
+.licenses-slider {
+  .swiper {
+    &-button {
+      background: rgba(255, 255, 255, 0.24);
+      backdrop-filter: blur(20px);
+      border-radius: 5px;
+      width: 53px;
+      height: 53px;
+      color: #fff;
+      z-index: 10;
+
+      &.swiper-button-disabled {
+        display: none;
+      }
+
+      @include desktop {
+        width: 100px;
+        height: 100px;
+      }
+
+      &:after {
+        font-size: 25px;
+      }
+    }
+  }
+}

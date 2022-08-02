@@ -1,0 +1,103 @@
+.hero-block {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+
+  &::after {
+    content: '';
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(21, 35, 43, 0) 16.71%, #15232B 100%);
+  }
+
+  &__background {
+    display: block;
+    z-index: 0;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__footer {
+    display: flex;
+    justify-content: center;
+    z-index: 2;
+    align-items: center;
+    position: relative;
+
+    @include mobile {
+      flex-direction: column;
+      justify-content: space-evenly;
+    }
+
+    .wp-block-button {
+      a {
+        padding: 23px 67px;
+        font-size: 24px;
+        margin: 0;
+
+        @include mobile {
+          padding: 12px 21px;
+          font-size: 16px;
+          width: 220px;
+        }
+      }
+
+      &:first-child {
+        @include desktop {
+          margin-right: 30px;
+        }
+        @include mobile {
+          margin-bottom: 20px;
+        }
+      }
+
+      &.is-style-outline {
+        a {
+          color: $color-primary !important;
+          background: rgba(0, 0, 0, 0.49);
+        }
+      }
+    }
+  }
+
+  &__content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+
+    @include desktop {
+      margin-top: 150px;
+    }
+  }
+
+  hr {
+    border-color: #fff;
+    max-width: 210px;
+    margin: 30px auto;
+  }
+
+  h2 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #fff;
+
+    @include desktop {
+      font-size: 3.2rem
+    }
+  }
+}

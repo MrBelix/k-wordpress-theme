@@ -1,0 +1,59 @@
+.sticky-footer {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: -200px;
+  z-index: 100;
+  background: rgba(255, 255, 255, 0.17);
+  backdrop-filter: blur(30px);
+  padding: 30px;
+  transition: bottom ease-in-out 0.2s;
+
+  @include desktop {
+    padding: 20px;
+  }
+
+  &.show {
+    bottom: 0;
+  }
+
+  &__container {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+
+    @include mobile {
+      flex-direction: column;
+    }
+
+    .wp-block-button {
+      a {
+        padding: 23px 67px;
+        font-size: 24px;
+        margin: 0;
+
+        @include mobile {
+          padding: 12px 21px;
+          font-size: 16px;
+          width: 220px;
+        }
+      }
+
+      &:first-child {
+        @include desktop {
+          margin-right: 30px;
+        }
+        @include mobile {
+          margin-bottom: 20px;
+        }
+      }
+
+      &.is-style-outline {
+        a {
+          color: $color-primary !important;
+          background: rgba(0, 0, 0, 0.41);
+        }
+      }
+    }
+  }
+}

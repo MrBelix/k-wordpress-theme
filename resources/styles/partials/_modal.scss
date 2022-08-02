@@ -1,0 +1,37 @@
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 150;
+  padding: 90px 130px;
+  background: rgba(0, 0, 0, 0.31);
+  backdrop-filter: blur(100px);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 1440px;
+  width: 100%;
+
+  @include desktop {
+    border-radius: 39px 48px 50px 50px;
+  }
+
+  @include mobile {
+    padding: 35px;
+  }
+
+  &__close {
+    position: absolute;
+    right: 54px;
+    top: 54px;
+    z-index: 151;
+  }
+
+  &__content {
+    max-height: calc(100vh - 70px);
+    overflow-y: auto;
+
+    @include mobile {
+      margin-top: 100px;
+    }
+  }
+}

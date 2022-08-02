@@ -1,0 +1,45 @@
+html {
+  background-color: $background-color;
+  color: #FFFFFF;
+  font-family: 'Cera Pro', sans-serif;
+  font-size: 20px;
+}
+
+body {
+  box-sizing: border-box;
+}
+
+.mobile {
+  @include desktop {
+    display: none;
+  }
+}
+
+.desktop {
+  @include mobile {
+    display: none;
+  }
+}
+
+.text-center {
+  text-align: center;
+}
+
+.color-primary {
+  color: $color-primary
+}
+
+.wp-block-image {
+  text-align: center;
+  padding: 26px;
+  width: 80%;
+  max-width: 1344px;
+  margin: 0 auto;
+
+  img {
+    width: 100%;
+    object-fit: cover;
+    display: block;
+  }
+}
+

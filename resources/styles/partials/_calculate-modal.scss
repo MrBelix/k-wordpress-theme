@@ -1,0 +1,48 @@
+.calculate-modal {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  @include mobile {
+    flex-direction: column;
+  }
+
+  & > div {
+    @include desktop {
+      width: 45%;
+    }
+  }
+
+  .wp-block-button {
+    margin-top: 20px;
+    width: 100%;
+    text-align: center;
+
+    @include mobile {
+      margin-bottom: 40px;
+    }
+
+    button {
+      font-weight: 700;
+      font-size: 24px;
+
+      @include mobile {
+        font-size: 18px;
+      }
+    }
+  }
+
+  &__inner-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    position: relative;
+    z-index: 51;
+    align-items: flex-end;
+
+    .input-group {
+      width: calc(50% - 15px);
+    }
+  }
+
+}
