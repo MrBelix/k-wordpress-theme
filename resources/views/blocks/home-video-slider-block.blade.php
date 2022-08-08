@@ -5,7 +5,7 @@
         @foreach($videos as $video)
           <div class="swiper-slide">
             {!! $video['iframe'] !!}
-            <h3>{{$video['title']}}</h3>
+            <h3>{!! $video['title'] !!}</h3>
           </div>
         @endforeach
       </div>
@@ -14,7 +14,7 @@
       @for($i=0; $i < 2; $i++)
         <div class="home-video-slider-block__item">
           {!! $videos[$i]['iframe'] !!}
-          <h3>{{$videos[$i]['title']}}</h3>
+          <h3>{!! $videos[$i]['title'] !!}</h3>
         </div>
       @endfor
     </div>
@@ -22,7 +22,7 @@
     @if($link)
     <div class="home-video-slider-block__links">
       <div class="wp-block-button is-style-outline">
-        <a href="{{$link['url']}}" class="wp-block-button__link">{{pll__('Переглянути більше')}}</a>
+        <a href="{{$link['url']}}" class="wp-block-button__link">{{__('Переглянути більше', 'sage')}}</a>
       </div>
     </div>
       @endif

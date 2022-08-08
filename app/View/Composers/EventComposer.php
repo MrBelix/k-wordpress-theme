@@ -15,11 +15,13 @@ class EventComposer extends Composer
     {
         $event = get_queried_object();
         $fields = get_fields($event);
+        $background = get_field('eventsbackground', 'options')['url']??'';
 
         return [
             'hero' => [
                 'title' => pll__('Події'),
-                'background' => get_field('eventsbackground', 'options')['url']??''
+                'background' => get_field('eventsbackground', 'options')['url']??'',
+                'is_video' => preg_match('#.mp4#', $background)
             ],
             'event' => $event,
             'eventFields' => $fields,

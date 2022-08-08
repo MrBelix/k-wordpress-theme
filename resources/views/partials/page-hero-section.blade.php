@@ -10,4 +10,5 @@
   <div class="page-hero-section__content">
     <h1 class="page-hero-section__title">{{$title}}</h1>
   </div>
+  @include('partials.back-button')
 </section>

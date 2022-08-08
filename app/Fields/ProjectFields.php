@@ -2,6 +2,7 @@
 
 namespace App\Fields;
 
+use App\Blocks\ProjectSliderBlock;
 use Log1x\AcfComposer\Field;
 use StoutLogic\AcfBuilder\FieldsBuilder;
 
@@ -32,6 +33,10 @@ class ProjectFields extends Field
                     $builder->addText($key, $params);
             }
         }
+
+        $builder->addGroup('slider')
+            ->addFields($this->get(ProjectSliderBlock::fieldsBuilder()))
+            ->endGroup();
 
         return $builder->build();
     }

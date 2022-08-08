@@ -22,9 +22,12 @@ class ProjectCategoryComposer extends Composer
             ],
             'links' => array_map(function ($id) {
                 $term = get_term($id);
+                $link = get_field('link_image', $term);
+
                 return [
                     'name' => $term->name,
-                    'link' => get_term_link($term)
+                    'link' => get_term_link($term),
+                    'image' => (!empty($link)? $link : get_field('thumbnail', $term))['url']??null
                 ];
             }, $acf['categories'])
         ];

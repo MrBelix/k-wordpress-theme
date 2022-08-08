@@ -1,5 +1,5 @@
 <div class="single-project__content">
-  <h2>{{$title}}</h2>
+  <h2>{!! $title !!}</h2>
   <h3>{{$distinct}}</h3>
   <div class="single-project__info">
     @foreach($info as $key => $info)
@@ -30,7 +30,7 @@
               </svg>
               @break
             @default
-              {{$info['value']}}
+              {!! $info['value'] !!}
           @endswitch
         </div>
       </div>

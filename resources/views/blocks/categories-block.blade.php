@@ -1,14 +1,15 @@
+@if($title)
+  <h2 class="categories-block__title">{{$title}}</h2>
+@endif
 <section class="categories-block" id="categories">
-  @if($title)
-    <h2 class="categories-block__title">{{$title}}</h2>
-  @endif
   @if($items)
+      <img class="categories-block__desktop-background base" src="{{$desktopBaseImage['url']}}" alt="">
     <div class="categories-block__desktop">
       @foreach($items as $key => $item)
         <img data-for="{{$key}}" class="categories-block__desktop-background" loading="lazy"
              src="{{$item['image']['url']}}" alt="">
         <a href="{{$item['link']}}" class="categories-block__desktop-item" data-target="{{$key}}">
-          {{$item['title']}}
+          {!! $item['title'] !!}
         </a>
       @endforeach
     </div>
@@ -20,10 +21,12 @@
               @if($item['show_mobile'])
                 <div class="swiper-slide">
                   <div class="categories-block__mobile-item">
-                    <h3>{{$item['title']}}</h3>
-                    <img loading="lazy" src="{{$item['image']['url']}}" alt="{{$item['image']['title']}}">
+                    <div class="relative">
+                      <img loading="lazy" src="{{$item['mobile_image']['url'] ?? $item['image']['url']}}" alt="{{$item['image']['title']}}">
+                      <div class="project-category__imgs-item">{{$item['title']}}</div>
+                    </div>
                     <div class="wp-block-button is-style-outline">
-                      <a href="{{$item['link']}}" class="wp-block-button__link">{{pll__('Переглянути всі')}}</a>
+                      <a href="{{$item['link']}}" class="wp-block-button__link">{{__('Переглянути більше', 'sage')}}</a>
                     </div>
                   </div>
                 </div>
@@ -31,12 +34,6 @@
             @endforeach
           </div>
         @endif
-        <div class="swiper-button swiper-button-prev">
-
-        </div>
-        <div class="swiper-button swiper-button-next">
-
-        </div>
       </div>
     </div>
   @endif

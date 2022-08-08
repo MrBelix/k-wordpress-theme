@@ -14,7 +14,8 @@ class CategoriesSection {
     if (!this.$el) return;
 
     this.$desktopItems.forEach(x => x.addEventListener('mouseover', x => this.onDesktopHover(x.target)))
-    this.onDesktopHover(this.$desktopItems[0])
+    this.$desktopItems.forEach(x => x.addEventListener('mouseleave', x => this.onDesktopLeave()));
+    // this.onDesktopHover(this.$desktopItems[0])
 
     new Swiper(`${this.selector}__mobile .swiper`, {
       modules: [
@@ -27,11 +28,6 @@ class CategoriesSection {
       autoplay: {
         delay: 2000,
       },
-      navigation: {
-        enabled: true,
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
     })
 
   }
@@ -41,13 +37,18 @@ class CategoriesSection {
       [this.$desktopActiveItem, this.$desktopActiveBackground].forEach(x => x.classList.remove('active'));
     }
 
-    this.$desktopActiveItem = target;
+    if (target) {
+      this.$desktopActiveItem = target;
+      const dataTarget = this.$desktopActiveItem.getAttribute('data-target');
 
-    const dataTarget = this.$desktopActiveItem.getAttribute('data-target');
+      this.$desktopActiveBackground = this.$el.querySelector(`${this.selector}__desktop-background[data-for="${dataTarget}"]`);
 
-    this.$desktopActiveBackground = this.$el.querySelector(`${this.selector}__desktop-background[data-for="${dataTarget}"]`);
+      [this.$desktopActiveItem, this.$desktopActiveBackground].forEach(x => x.classList.add('active'))
+    }
+  }
 
-    [this.$desktopActiveItem, this.$desktopActiveBackground].forEach(x => x.classList.add('active'))
+  onDesktopLeave() {
+    this.onDesktopHover(null)
   }
 }
 

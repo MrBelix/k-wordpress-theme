@@ -1,11 +1,31 @@
 .banner {
-  position: absolute;
+  position: fixed;
   top: 0;
   z-index: 110;
   width: 100%;
+  transition: top ease-in-out 0.5s;
+
+  &.hide {
+    @include desktop {
+      top: -200px;
+    }
+  }
 
   @include desktop {
     padding-top: 30px;
+    background: linear-gradient(0deg, rgba(21, 35, 43, 0) 0%, rgba(21, 35, 43, 0.9) 60%);
+  }
+
+  > .mobile.lss {
+    position: fixed;
+    z-index: 2;
+    left: 26px;
+    top: 26px;
+    display: none;
+
+    .home & {
+      display: block;
+    }
   }
 
   &__hamburger {
@@ -78,6 +98,11 @@
       order: 1;
     }
 
+    @include desktop {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
+
     .logo {
       margin: 0 4.13vw;
       width: 10.9vw;
@@ -112,12 +137,7 @@
     }
 
     li {
-      margin: 0 3.62vw;
-
-      &:first-child,
-      &:last-child {
-        margin: 0;
-      }
+      margin: 0;
 
       @include mobile {
         margin-bottom: 25px !important;

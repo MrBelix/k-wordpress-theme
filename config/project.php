@@ -22,11 +22,11 @@ return [
             'type' => 'text'
         ],
         'wall' => [
-            'label' => 'Підпірна стінка',
+            'label' => 'Підпірна стіна',
             'type' => 'text'
         ],
         'capacity' => [
-            'label' => 'Вмістимість',
+            'label' => 'Обсяг завантаження',
             'type' => 'text'
         ],
         'ventilation' => [

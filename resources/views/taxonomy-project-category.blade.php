@@ -17,11 +17,27 @@
       </div>
     @endwhile
   </section>
-  <section class="project-category__links">
+  @if(!empty($links))
+  <section class="project-category__links mobile">
     @foreach($links as $link)
     <div class="wp-block-button is-style-outline">
       <a href="{{$link['link']}}" class="wp-block-button__link">{{$link['name']}}</a>
     </div>
     @endforeach
   </section>
+
+  <section class="project-category__imgs desktop">
+    <blockquote class="wp-block-quote">
+      <p>{{__('НАВІЩО МАЛЮВАТИ В УЯВІ, КОЛИ КРАЩЕ ПОБАЧИТИ ', 'sage')}}</p>
+    </blockquote>
+    <div class="project-category__imgs-wrapp">
+      @foreach($links as $link)
+        <a href="{{$link['link']}}">
+          <div class="project-category__imgs-item">{{$link['name']}}</div>
+          <img src="{{$link['image']}}" alt="{{$link['name']}}">
+        </a>
+      @endforeach
+    </div>
+  </section>
+  @endif
 @endsection

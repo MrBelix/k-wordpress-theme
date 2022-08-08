@@ -1,0 +1,19 @@
+.archive-project {
+  &__title {
+    text-align: center;
+    padding: 90px 0 25px;
+    margin: 0;
+    font-size: 30px;
+    font-weight: 700;
+  }
+
+  &__item {
+    display: block;
+    margin: 100px 0 20px;
+    position: relative;
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+}

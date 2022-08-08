@@ -165,6 +165,7 @@ add_action('init', function () {
         'menu_icon' => 'dashicons-admin-multisite',
         'public' => true,
         'menu_position' => 5,
+        'has_archive' => true,
         'supports' => [
             'title',
         ]
@@ -202,8 +203,4 @@ add_action('init', function () {
             'thumbnail'
         ]
     ]);
-
-    pll_register_string('main', 'Головна');
-    pll_register_string('calculate_project', 'Розрахувати проект');
-    pll_register_string('area', 'Розрахуватиa проект');
 }, 0);

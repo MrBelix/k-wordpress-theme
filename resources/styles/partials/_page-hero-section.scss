@@ -13,7 +13,36 @@
       left: 0;
       right: 0;
       z-index: 2;
-      background: linear-gradient(178.13deg, rgba(21, 35, 43, 0) 38.13%, rgba(21, 35, 43, 0.89) 79.54%, #15232B 98.42%);
+      background: linear-gradient(178.13deg, rgba(21, 35, 43, 0) 38.13%, rgba(21, 35, 43, 0.89) 79.54%, #162833 98.42%);
+
+      .tax-project-category &{
+        background: linear-gradient(178.13deg, rgba(21, 35, 43, 0) 38.13%, rgba(21, 35, 43, 0.89) 79.54%, $background-color 98.42%);
+      }
+    }
+
+    .back-button {
+      position: absolute;
+      z-index: 3;
+      background: linear-gradient(180deg, rgba(21, 35, 43, 0.1) 0%, rgba(21, 35, 43, 0.5) 100%);
+      backdrop-filter: blur(1px);
+      padding: 10px 40px 10px 10vw;
+      top: 20%;
+
+      svg {
+        height: 50px;
+      }
+    }
+  }
+
+  @include mobile {
+    .back-button {
+      position: absolute;
+      left: 0px;
+      top: 30px;
+
+      svg {
+        height: 50px;
+      }
     }
   }
 

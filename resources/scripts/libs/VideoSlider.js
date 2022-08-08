@@ -8,11 +8,12 @@ class VideoSlider {
 
   register() {
     new Swiper(this.selector, {
-      centeredSlides: this,
+      centeredSlides: true,
       loop: true,
+      slideToClickedSlide: true,
       breakpoints: {
         1024: {
-          slidesPerView: 3
+          slidesPerView: 3,
         }
       }
     })

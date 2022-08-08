@@ -21,8 +21,12 @@
     &-slide {
       display: flex;
       height: auto;
-      max-height: 50vh;
       align-self: stretch;
+      max-height: 50vh;
+
+      @include mobile {
+        max-height: 60vw;
+      }
 
       img {
         object-fit: cover;

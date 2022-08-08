@@ -29,11 +29,8 @@
       'info' => $project->getInfo()
     ])
   </section>
-  <section class="project-category__links">
-    @foreach($links as $link)
-      <div class="wp-block-button is-style-outline">
-        <a href="{{$link['link']}}" class="wp-block-button__link">{{$link['name']}}</a>
-      </div>
-    @endforeach
-  </section>
+
+  @include('blocks.projects-slider-block', $slider)
+
+  @include('components.modal', ['content' => 'components.slider-modal', 'trigger' => 'modal-slider', 'fields' => ['images' => $project->getGallery()]])
 @endsection

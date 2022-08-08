@@ -2,6 +2,7 @@
 
 namespace App\View\Composers;
 
+use App\Mappers\ProjectSliderMapper;
 use App\Models\Project;
 use Roots\Acorn\View\Composer;
 
@@ -14,8 +15,10 @@ class ProjectComposer extends Composer
     public function with()
     {
         $post = get_post();
+        $fields = get_fields();
         $term = get_the_terms($post, 'project-category')[0];
-        $acf = get_fields($term);
+
+        $projects = $fields['slider']['projects'];
 
         return [
             'hero' => [
@@ -23,13 +26,14 @@ class ProjectComposer extends Composer
                 'background' => get_field('thumbnail', $term)['url']
             ],
             'project' => new Project($post),
-            'links' => array_map(function ($id) {
-                $term = get_term($id);
-                return [
-                    'name' => $term->name,
-                    'link' => get_term_link($term)
-                ];
-            }, $acf['categories'])
+            'slider' => array_merge($fields['slider']??[], [
+                'projects' => array_map([$this, 'sliderMap'],  !empty($projects)?$projects:[])
+            ])
         ];
+    }
+
+    private function sliderMap($item): Project
+    {
+        return new Project($item['project']);
     }
 }

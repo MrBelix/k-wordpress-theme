@@ -11,6 +11,7 @@ class AcknowledgmentsSlider {
       slidesPerView: 1,
       centeredSlides: true,
       spaceBetween: 50,
+      initialSlide: 2,
       modules: [
         Autoplay
       ],

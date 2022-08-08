@@ -55,9 +55,11 @@
     padding: 35px;
     text-decoration: none;
     margin-bottom: 100px;
+    z-index: 1;
 
     @include mobile {
       margin-bottom: 50px;
+      padding: 35px 35px 15px;
     }
 
     @include desktop {
@@ -71,7 +73,7 @@
       right: 0;
       bottom: 0;
       z-index: -1;
-      height: 60%;
+      height: 70%;
       background: rgba(0, 0, 0, 0.59);
       backdrop-filter: blur(50px);
     }

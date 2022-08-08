@@ -18,6 +18,7 @@ class ProjectSliderBlock extends Block
         return [
             'title' => $fields['title']??null,
             'link' => $fields['link']??null,
+            'whiteButtonLink' => $fields['white_button_link']??null,
             'projects' => array_map(
                 [ProjectSliderMapper::class, 'mapStatic'],
                 array_column($fields['projects'], 'project')??[]
@@ -31,6 +32,7 @@ class ProjectSliderBlock extends Block
 
         $fields->addText('title')
             ->addLink('link')
+            ->addLink('white_button_link')
             ->addRepeater('projects')
             ->addPostObject('project', [
                 'post_type' => 'project'

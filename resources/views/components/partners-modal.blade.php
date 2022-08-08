@@ -1,12 +1,12 @@
 
   <div id="partners-modal" class="partners-modal">
-    <h2>{{$title}}</h2>
+    <h2>{{$partnerModal['title']??''}}</h2>
     <div class="partners-modal__main">
       <div>
-        {!! $leftContent !!}
+        {!! $partnerModal['leftContent']??'' !!}
       </div>
       <div>
-        {!! $rightContent !!}
+        {!! $partnerModal['rightContent']??'' !!}
       </div>
     </div>
     <div class="partners-modal__footer">
@@ -28,7 +28,7 @@
       </svg>
       <div>
         <div class="wp-block-button">
-          <a href="{{$phoneLink}}" class="wp-block-button__link">{{$phone}}</a>
+          <a href="{{$partnerModal['phoneLink']??''}}" class="wp-block-button__link">{{$partnerModal['phone']??''}}</a>
         </div>
       </div>
       <svg width="59" height="59" viewBox="0 0 59 59" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -45,8 +45,8 @@
         </defs>
       </svg>
       <div>
-        <h3>{!! $person !!}</h3>
-        <h4>({!! $department !!})</h4>
+        <h3>{!! $partnerModal['person']??'' !!}</h3>
+        <h4>({!! $partnerModal['department']??'' !!})</h4>
       </div>
     </div>
   </div>

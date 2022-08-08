@@ -2,14 +2,18 @@ html {
   color: #FFFFFF;
   font-family: 'Cera Pro', sans-serif;
   font-size: 20px;
-  overflow-x: hidden;
 }
 
 body {
   background: linear-gradient(180deg, #15232B 21.07%, #1D4359 51.56%, #18252D 72.87%);
+  overflow-x: hidden;
 
-  &.home {
+  &.home, &.page-template-template-video, &.tax-project-category {
     background: $background-color;
+  }
+
+  &.modal-oppened {
+    overflow: hidden;
   }
 }
 
@@ -21,13 +25,13 @@ body {
 
 .mobile {
   @include desktop {
-    display: none;
+    display: none !important;
   }
 }
 
 .desktop {
   @include mobile {
-    display: none;
+    display: none !important;
   }
 }
 
@@ -66,4 +70,8 @@ img {
   @include desktop {
     text-align: center !important;
   }
+}
+
+.relative {
+  position: relative;
 }

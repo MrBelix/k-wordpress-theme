@@ -4,6 +4,7 @@ namespace App\Options;
 
 use App\Options\Tabs\MainOptionsTab;
 use App\Options\Tabs\PartnersOptionsTab;
+use App\Options\Tabs\SellOptionsTab;
 use Log1x\AcfComposer\Options as Field;
 use StoutLogic\AcfBuilder\FieldsBuilder;
 
@@ -34,7 +35,8 @@ class Options extends Field
 
         $options
             ->addFields($this->get(MainOptionsTab::class))
-            ->addFields($this->get(PartnersOptionsTab::class));
+            ->addFields($this->get(PartnersOptionsTab::class))
+            ->addFields($this->get(SellOptionsTab::class));
 
         return $options->build();
     }

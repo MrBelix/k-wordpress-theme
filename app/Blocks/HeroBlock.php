@@ -16,6 +16,7 @@ class HeroBlock extends Block
         return [
             'title' => $fields['title']??null,
             'background' => $fields['background']??null,
+            'mobileBackground' => $fields['mobile-background']??null,
         ];
     }
 
@@ -25,6 +26,7 @@ class HeroBlock extends Block
 
         $builder
             ->addFile('background')
+            ->addFile('mobile-background')
             ->addText('title');
 
         return $builder->build();

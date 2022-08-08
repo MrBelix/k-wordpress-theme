@@ -11,6 +11,9 @@ import Choices from "choices.js";
 import ImageSlider from "@scripts/libs/ImageSlider";
 import VideoSlider from "@scripts/libs/VideoSlider";
 import Modal from "@scripts/libs/Modal";
+import VideoSliderBlock from "@scripts/libs/VideoSliderBlock";
+import Navigation from "@scripts/libs/Navigation";
+import CalculateForm from "@scripts/forms/CalculateForm";
 
 /**
  * app.main
@@ -23,6 +26,9 @@ const main = async (err) => {
 
   const mobileNavigation = new MobileNavigation('#open-mobile-menu', '.banner .close-modal')
   mobileNavigation.register();
+
+  const nav = new Navigation('.banner')
+  nav.register();
 
   const stickFooter = new StickyFooter('.sticky-footer')
   stickFooter.register();
@@ -51,7 +57,15 @@ const main = async (err) => {
   const modal = new Modal('.modal', 'data-trigger')
   modal.register();
 
+  const videoSliderBlock = new VideoSliderBlock('.video-slider-block .swiper')
+  videoSliderBlock.register();
+
+
   document.querySelectorAll('.vid').forEach(x => x.play())
+
+  document.querySelectorAll('iframe').forEach(x => {
+    x.setAttribute('loading', 'lazy')
+  })
 
   document.querySelectorAll('.input-group.select select').forEach(x => {
     new Choices(x, {
@@ -61,6 +75,11 @@ const main = async (err) => {
       }
     })
   })
+
+  const cf = new CalculateForm('#calculate-modal', ['name', 'phone', 'district', 'width', 'length', 'height', 'company'])
+  cf.register();
+  const sf = new CalculateForm('#second-calculate-modal', ['name', 'phone', 'district', 'company'])
+  sf.register();
 
 };
 

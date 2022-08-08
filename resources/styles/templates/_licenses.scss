@@ -110,6 +110,10 @@
       h2 {
         font-size: 32px;
 
+        @include mobile {
+          text-align: left;
+        }
+
         @include desktop {
           font-size: 60px;
         }
@@ -117,6 +121,9 @@
 
       p {
         font-size: 24px;
+        @include mobile {
+          text-align: left !important;
+        }
 
         @include desktop {
           font-size: 32px;

@@ -34,11 +34,17 @@
       font-size: 48px;
       color: #15232B;
       padding: 15px;
+      z-index: 2;
 
       @include mobile {
         font-size: 24px;
         text-align: center;
-        margin-bottom: 5px;
+        margin-bottom: 0px;
+      }
+
+      span {
+        position: relative;
+        z-index: 2;
       }
 
 
@@ -49,20 +55,21 @@
         top: 0;
         transform: translateX(-30%);
         position: absolute;
-        z-index: -1;
+        z-index: 1;
         background-color: $color-primary;
 
         @include mobile {
           width: 100vw;
           transform: none;
           left: 0;
-          height: 150%;
         }
       }
     }
 
     &-thumbnail {
       object-fit: cover;
+      position: relative;
+      z-index: 3;
 
       @include desktop {
         margin-right: 5%;
@@ -158,6 +165,7 @@
 
     &-right {
       position: relative;
+      z-index: 1;
 
       &:before {
         @include desktop {

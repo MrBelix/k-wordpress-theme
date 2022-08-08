@@ -18,6 +18,6 @@
     </svg>
   </div>
   <div class="modal__content">
-    @include($content)
+    @include($content, $fields??[])
   </div>
 </div>

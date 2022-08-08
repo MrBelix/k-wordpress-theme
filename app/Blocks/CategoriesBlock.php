@@ -12,9 +12,11 @@ class CategoriesBlock extends Block
     public function with()
     {
         $fields = get_fields();
+
         return [
             'title' => $fields['title']??null,
             'items' => $fields['items']??[],
+            'desktopBaseImage' => $fields['desktop_base_background']??null
         ];
     }
 
@@ -24,10 +26,12 @@ class CategoriesBlock extends Block
 
         $builder
             ->addText('title')
+            ->addImage('desktop_base_background')
             ->addRepeater('items')
                 ->addText('title')
                 ->addUrl('link')
                 ->addImage('image')
+                ->addImage('mobile_image')
                 ->addTrueFalse('show_mobile')
             ->endRepeater();
 

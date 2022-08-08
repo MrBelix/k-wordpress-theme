@@ -20,10 +20,14 @@ class Modal {
         x.addEventListener('click', (e) => {
           e.preventDefault();
           modal.classList.add('open')
+          document.body.classList.add('modal-oppened')
         })
       })
 
-    modal.querySelector('.modal__close').addEventListener('click', () => modal.classList.remove('open'))
+    modal.querySelector('.modal__close').addEventListener('click', () => {
+      modal.classList.remove('open')
+      document.body.classList.remove('modal-oppened')
+    })
   }
 }
 

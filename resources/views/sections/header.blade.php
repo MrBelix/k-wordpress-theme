@@ -4,6 +4,9 @@
       <div></div>
       <div></div>
     </div>
+  <div class="mobile lss">
+    @include('partials.languages')
+  </div>
     <div class="banner__wrapper">
       @include('partials.social-links')
       <div class="banner__navigation">

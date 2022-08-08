@@ -13,14 +13,27 @@ class PartnersModalComposer extends Composer
 
     public function with()
     {
+        $fields = $this->getFields();
         return [
-            'title' => 'Партнерство',
-            'leftContent' => "Будівельна компанія ТОВ \"Каркас Груп\" стрімко нарощує власні виробничі потужності та є лідером капітального будівництва об'єктів сільськогосподарського та виробничого призначення.",
-            'rightContent' => "Компанія наразі розширює коло надійних партнерів і запрошує до співпраці постачальників зерноочисних/зерносушильних комплексів, допоміжного устаткування складських приміщень (зернові транспортери, кран-балки, системи підлогової вентиляції) та постачальників металопрокату.",
-            'phoneLink' => '',
-            'phone' => '+38(097) 000-13-97',
-            'person' => 'Артем',
-            'department' => 'відділ партнерських угод'
+            'partnerModal' => array_merge($fields, ['phoneLink' => $this->phoneUrl($fields['phone']??'')])
         ];
+    }
+
+    private function phoneUrl($phone)
+    {
+        return 'tel:' . str_replace(['(', ')', ' ', '-'], '', $phone);
+    }
+
+    private function getFields()
+    {
+        $slug = pll_current_language('slug');
+
+        switch ($slug) {
+            case 'ru':
+                return get_field('partners ru', 'options');
+            case 'uk':
+            default:
+                return  get_field('partners ua', 'options');
+        }
     }
 }

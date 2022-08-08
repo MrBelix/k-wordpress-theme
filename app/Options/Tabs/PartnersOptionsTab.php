@@ -4,6 +4,7 @@ namespace App\Options\Tabs;
 
 use Log1x\AcfComposer\Partial;
 use StoutLogic\AcfBuilder\FieldsBuilder;
+use function Sodium\add;
 
 class PartnersOptionsTab extends Partial
 {
@@ -14,10 +15,21 @@ class PartnersOptionsTab extends Partial
 
         $builder
             ->addTab('Partners modal')
-            ->addGroup('partners')
-                ->addWysiwyg('content')
+            ->addGroup('partners ua')
+                ->addText('title')
+                ->addWysiwyg('leftContent')
+                ->addWysiwyg('rightContent')
                 ->addText('phone')
-                ->addWysiwyg('additional-content')
+                ->addText('person')
+                ->addText('department')
+            ->endGroup()
+            ->addGroup('partners ru')
+                ->addText('title')
+                ->addWysiwyg('leftContent')
+                ->addWysiwyg('rightContent')
+                ->addText('phone')
+                ->addText('person')
+                ->addText('department')
             ->endGroup();
 
         return $builder;

@@ -96,7 +96,7 @@
       }
 
       &:hover {
-      box-shadow: 0 0 50px #FFC60A;
+        transform: scale(1.03);
       }
     }
   }
@@ -105,6 +105,10 @@
     display: flex;
     justify-content: center;
     padding: 0 20px;
+
+    @include desktop {
+      display: none;
+    }
 
     .wp-block-button {
       width: 100%;
@@ -124,6 +128,56 @@
         @media (max-width: 320px) {
           font-size: 16px;
         }
+      }
+    }
+  }
+
+  &__imgs {
+    .wp-block-quote {
+      margin: 200px auto 150px;
+    }
+
+    &-wrapp {
+      display: none;
+      margin: 50px auto;
+
+      @include desktop {
+        display: flex;
+      }
+    }
+
+    a {
+      position: relative;
+      display: block;
+      width: 50%;
+      transition: all ease-in-out 0.2s;
+
+      &:hover {
+        transform: scale(1.1);
+        z-index: 2;
+      }
+
+      img {
+        height: 100%;
+      }
+    }
+
+    &-item {
+      position: absolute;
+      z-index: 1;
+      padding: 25px 0;
+      background: rgba(0, 0, 0, 0.44);
+      top: 50%;
+      transform: translateY(-50%);
+      width: 100%;
+      left: 0;
+      text-align: center;
+      color: #fff;
+      font-size: 54px;
+      font-weight: 700;
+
+      @include mobile {
+        font-size: 32px;
       }
     }
   }

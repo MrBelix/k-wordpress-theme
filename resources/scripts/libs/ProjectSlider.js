@@ -6,21 +6,38 @@ class ProjectSlider {
   }
 
   register() {
+
+    this.modal = new Swiper('[data-trigger="modal-slider"] .swiper-modal', {
+      loop: true
+    })
+
     this.main = new Swiper(`${this.selector} .swiper-main`, {
       loop: true,
-      loopedSlides: 4,
+      on: {
+        click: e => {
+          const modal = document.querySelector('[data-trigger="modal-slider"]');
+          modal.classList.add('open')
+          document.body.classList.add('modal-oppened')
+        }
+      }
     })
 
     this.preview = new Swiper(`${this.selector} .swiper-preview`, {
       slidesPerView: 4,
-      spaceBetween: 10,
+      slidesPerGroup: 1,
       loop: true,
-      loopedSlides: 4,
-      slideToClickedSlide: true,
+      spaceBetween: 10,
+      on: {
+        slideChange: e => {
+          this.main.slideTo(e.activeIndex - 3)
+          this.modal.slideTo(e.activeIndex - 3)
+        }
+      }
     })
 
-    this.main.controller.control = this.preview;
-    this.preview.controller.control = this.main;
+      this.main.on('slideChange', e =>  {
+        this.preview.slideTo(e.activeIndex + 3)
+      })
   }
 }
 
