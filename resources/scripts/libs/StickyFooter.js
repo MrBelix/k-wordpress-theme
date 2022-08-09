@@ -6,21 +6,16 @@ class StickyFooter {
   }
 
   register() {
-    if (!this.$heroSection) {
-      this.$el.classList.add('show')
-    } else {
-      document.addEventListener('scroll', (event) => {
-        const currentScrollPos = window.scrollY;
+    document.addEventListener('scroll', (event) => {
+      const currentScrollPos = window.scrollY;
+      if ((this.$heroSection && currentScrollPos < this.$heroSection.offsetHeight) || currentScrollPos > this.scrollPos) {
+        this.$el.classList.remove('show');
+      } else {
+        this.$el.classList.add('show');
+      }
 
-        if (currentScrollPos > this.$heroSection.offsetHeight && currentScrollPos < this.scrollPos) {
-          this.$el.classList.add('show');
-        } else {
-          this.$el.classList.remove('show');
-        }
-
-        this.scrollPos = currentScrollPos;
-      })
-    }
+      this.scrollPos = currentScrollPos;
+    });
   }
 }
 
