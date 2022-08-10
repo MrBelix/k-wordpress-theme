@@ -17,6 +17,7 @@ return [
     */
 
     'defaults' => [
+        'mode' => 'edit',
         'trueFalse' => ['ui' => 1],
         'select' => ['ui' => 1],
     ],

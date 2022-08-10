@@ -18,9 +18,10 @@ class HomeVideoSliderBlock extends Block
             'videos' => array_map(function ($item){
                 return [
                     'title' => $item['title'],
+                    'image' => $item['image'],
                     'iframe' => $item['iframe'],
                 ];
-            }, $fields['videos'])
+            }, $fields['videos']??[])
         ];
     }
 
@@ -31,6 +32,7 @@ class HomeVideoSliderBlock extends Block
         $fields->addLink('link')
             ->addRepeater('videos')
                 ->addText('title')
+                ->addImage('image')
                 ->addText('iframe')
             ->endRepeater();
 

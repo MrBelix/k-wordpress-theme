@@ -5,11 +5,12 @@ html {
 }
 
 body {
-  background: linear-gradient(180deg, #15232B 21.07%, #1D4359 51.56%, #18252D 72.87%);
+  //background: linear-gradient(180deg, #15232B 21.07%, #1D4359 51.56%, #18252D 72.87%);
+  background: $background-color;
   overflow-x: hidden;
 
   &.home, &.page-template-template-video, &.tax-project-category {
-    background: $background-color;
+    //background: $background-color;
   }
 
   &.modal-oppened {

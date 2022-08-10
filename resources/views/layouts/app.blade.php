@@ -11,5 +11,7 @@
 @include('components.modal', ['content' => 'components.individual-modal', 'trigger' => 'individual-modal'])
 
 
+<script src="https://www.youtube.com/iframe_api"></script>
 @include('sections.footer')
+
 

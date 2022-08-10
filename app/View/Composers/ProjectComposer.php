@@ -19,13 +19,15 @@ class ProjectComposer extends Composer
         $term = get_the_terms($post, 'project-category')[0];
 
         $projects = $fields['slider']['projects'];
+        $project = new Project($post);
 
         return [
             'hero' => [
-                'title' => $term->name,
-                'background' => get_field('thumbnail', $term)['url']
+                'title' => "<h2>{$project->getTitle()}</h2><h3>{$project->getDistrict()}</h3>",
+//                'background' => get_field('thumbnail', $term)['url']
+                'background' => get_the_post_thumbnail_url($post)
             ],
-            'project' => new Project($post),
+            'project' => $project,
             'slider' => array_merge($fields['slider']??[], [
                 'projects' => array_map([$this, 'sliderMap'],  !empty($projects)?$projects:[])
             ])

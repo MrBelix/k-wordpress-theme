@@ -2,24 +2,29 @@
   <form id="second-calculate-modal" class="calculate-modal">
     <div>
       <div class="input-group">
-        <label for="name">{{__('ПІБ')}}</label>
+        <label for="name">{{__('ПІБ')}}*</label>
         <input id="name" type="text" name="name">
+        <span class="error">{{__('Введіть дані для розрахунку!', 'sage')}}</span>
       </div>
       <div class="input-group">
-        <label for="phone">{{__('Номер телефону')}}</label>
+        <label for="phone">{{__('Номер телефону')}}*</label>
         <input id="phone" type="text" name="phone">
+        <span class="error">{{__('Введіть дані для розрахунку!', 'sage')}}</span>
       </div>
       <div class="input-group select search">
-        <label for="district">{{__('Область')}}</label>
+        <label for="district">{{__('Область')}}*</label>
         <select id="district" name="district" data-search="true">
+          <option placeholder></option>
           @foreach($districts as $key => $district)
             <option value="{{$key}}">{{$district}}</option>
           @endforeach
         </select>
+        <span class="error">{{__('Введіть дані для розрахунку!', 'sage')}}</span>
       </div>
       <div class="input-group">
-        <label for="company">{{__('Назва підприємства')}}</label>
+        <label for="company">{{__('Назва підприємства')}}*</label>
         <input id="company" type="text" name="company">
+        <span class="error">{{__('Введіть дані для розрахунку!', 'sage')}}</span>
       </div>
     </div>
     <div>
@@ -36,6 +41,7 @@
 
           </span>
         </label>
+        <span class="error">{{__('Введіть дані для розрахунку!', 'sage')}}</span>
         <input id="file" type="file" name="file">
       </div>
       <div class="input-group textarea" style="height: 324px">

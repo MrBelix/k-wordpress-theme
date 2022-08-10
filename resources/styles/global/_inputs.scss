@@ -1,23 +1,23 @@
 .input-group {
   display: flex;
   flex-direction: column;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
   position: relative;
 
   .error {
     margin-top: 5px;
-    display: none;
+    opacity: 0;
     font-size: 12px;
     font-weight: 500;
     color: #FF2828;
   }
 
   &.invalid {
-    .input {
+    input, .choices__inner {
       border-color: #DD1E1E;
     }
     .error {
-      display: block;
+      opacity: 1;
     }
   }
 
@@ -88,6 +88,7 @@
 
   .choices {
     font-size: 20px;
+    margin-bottom: 0;
 
     &:after {
       background: url(~@images/select-arrow.svg) no-repeat;

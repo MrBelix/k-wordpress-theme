@@ -8,7 +8,7 @@
     <img class="page-hero-section__background" src="{{$background}}" alt="background">
   @endif
   <div class="page-hero-section__content">
-    <h1 class="page-hero-section__title">{{$title}}</h1>
+    <h1 class="page-hero-section__title">{!! $title !!}</h1>
   </div>
   @include('partials.back-button')
 </section>

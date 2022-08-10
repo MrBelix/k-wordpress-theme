@@ -2,18 +2,19 @@
   <form id="calculate-modal" class="calculate-modal">
     <div>
       <div class="input-group">
-        <label for="name">{{__('ПІБ')}}</label>
+        <label for="name">{{__('ПІБ')}}*</label>
         <input id="name" type="text" name="name">
         <span class="error">{{__('Введіть дані для розрахунку!', 'sage')}}</span>
       </div>
       <div class="input-group">
-        <label for="phone">{{__('Номер телефону')}}</label>
+        <label for="phone">{{__('Номер телефону')}}*</label>
         <input id="phone" type="text" name="phone">
         <span class="error">{{__('Введіть дані для розрахунку!', 'sage')}}</span>
       </div>
       <div class="input-group select search">
-        <label for="district">{{__('Область')}}</label>
+        <label for="district">{{__('Область')}}*</label>
         <select id="district" name="district" data-search="true">
+          <option placeholder></option>
           @foreach($districts as $key => $district)
             <option value="{{$key}}">{{$district}}</option>
           @endforeach
@@ -21,7 +22,7 @@
         <span class="error">{{__('Введіть дані для розрахунку!', 'sage')}}</span>
       </div>
       <div class="input-group">
-        <label for="company">{{__('Назва підприємства')}}</label>
+        <label for="company">{{__('Назва підприємства')}}*</label>
         <input id="company" type="text" name="company">
         <span class="error">{{__('Введіть дані для розрахунку!', 'sage')}}</span>
       </div>
@@ -32,6 +33,7 @@
             <option value="{{$key}}">{{$type}}</option>
           @endforeach
         </select>
+        <span class="error">{{__('Введіть дані для розрахунку!', 'sage')}}</span>
       </div>
     </div>
     <div>
@@ -48,22 +50,24 @@
 
           </span>
         </label>
+        <span class="error">{{__('Введіть дані для розрахунку!', 'sage')}}</span>
         <input id="file" type="file" name="file">
       </div>
       <div class="calculate-modal__inner-group">
         <div class="input-group">
-          <label for="width">{{__('Ширина:')}}</label>
+          <label for="width">{{__('Ширина:')}}*</label>
           <input id="width" type="text" name="width">
           <span class="error">{{__('Введіть дані для розрахунку!', 'sage')}}</span>
         </div>
         <div class="input-group">
-          <label for="length">{{__('Довжина:')}}</label>
+          <label for="length">{{__('Довжина:')}}*</label>
           <input id="length" type="text" name="length">
           <span class="error">{{__('Введіть дані для розрахунку!', 'sage')}}</span>
         </div>
         <div class="input-group select">
           <label for="wall">{{__('Підпірна стіна:')}}</label>
           <select name="wall" id="wall">
+            <option placeholder></option>
             @foreach($wall as $key => $type)
               <option value="{{$key}}">{{$type}}</option>
             @endforeach
@@ -71,7 +75,7 @@
           <span class="error">{{__('Введіть дані для розрахунку!', 'sage')}}</span>
         </div>
         <div class="input-group">
-          <label for="height">{{__('Висота')}}</label>
+          <label for="height">{{__('Висота')}}*</label>
           <input id="height" type="text" name="height">
           <span class="error">{{__('Введіть дані для розрахунку!', 'sage')}}</span>
         </div>

@@ -7,7 +7,7 @@ class VideoSlider {
   }
 
   register() {
-    new Swiper(this.selector, {
+    new Swiper(this.selector + ' .swiper', {
       centeredSlides: true,
       loop: true,
       slideToClickedSlide: true,
@@ -18,7 +18,7 @@ class VideoSlider {
       }
     })
 
-    document.querySelectorAll(this.selector)
+    document.querySelectorAll(this.selector + ' .swiper')
       .forEach(x => {
         x.addEventListener('click', (e) => {
           if (e.target && e.target.classList.contains('swiper-slide')) {
@@ -26,15 +26,30 @@ class VideoSlider {
           }
         })
       })
+
+    document.querySelectorAll(this.selector + '__item')
+      .forEach(x => {
+        x.addEventListener('click', e => {
+          x.querySelector('.img').style.display = 'none'
+          x.querySelector('.iframe').style.display = 'block';
+
+          const player = new YT.Player(x.querySelector('.iframe'), {
+            videoId: x.getAttribute('data-video-id'),
+            events: {
+              onReady: (event) => {
+                event.target.playVideo();
+              }
+            }
+          });
+        })
+      })
+
   }
 
   modalOpen(el) {
     if (this.modal) {
       this.modal.remove();
     }
-
-    const iframe = el.querySelector('iframe').cloneNode();
-    iframe.setAttribute('src', iframe.src + '?autoplay=1')
 
     this.modal = document.createElement('div');
     this.modal.classList.add('modal', 'open', 'home-video-slider-block')
@@ -54,16 +69,22 @@ class VideoSlider {
     </svg>
   </div>
   <div class="modal__content">
+  <div class="iframe"></div>
   </div>`
 
     this.modal.querySelector('.modal__close').addEventListener('click', () => {
       this.modal.remove();
-      iframe.contentWindow.postMessage('{"event":"command","func":"stopVideo","args":""}', '*')
     })
 
-    this.modal.querySelector('.modal__content').appendChild(
-      iframe.cloneNode()
-    )
+
+    const player = new YT.Player(this.modal.querySelector('.iframe'), {
+      videoId: el.getAttribute('data-video-id'),
+      events: {
+        onReady: (event) => {
+          event.target.playVideo();
+        }
+      }
+    });
 
 
     document.body.append(this.modal);

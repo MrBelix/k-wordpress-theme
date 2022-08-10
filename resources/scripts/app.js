@@ -1,4 +1,3 @@
-import React from "react";
 import {domReady} from '@roots/sage/client';
 import MobileNavigation from "@scripts/libs/MobileNavigation";
 import StickyFooter from "@scripts/libs/StickyFooter";
@@ -23,6 +22,7 @@ const main = async (err) => {
     // handle hmr errors
     console.error(err);
   }
+
 
   const mobileNavigation = new MobileNavigation('#open-mobile-menu', '.banner .close-modal')
   mobileNavigation.register();
@@ -51,21 +51,17 @@ const main = async (err) => {
   const imageSlider = new ImageSlider('.projects-slider-block .swiper')
   imageSlider.register();
 
-  const videoSlider = new VideoSlider('.home-video-slider-block .swiper');
+  const videoSlider = new VideoSlider('.home-video-slider-block');
   videoSlider.register()
 
   const modal = new Modal('.modal', 'data-trigger')
   modal.register();
 
-  const videoSliderBlock = new VideoSliderBlock('.video-slider-block .swiper')
+  const videoSliderBlock = new VideoSliderBlock('.video-slider-block')
   videoSliderBlock.register();
 
 
   document.querySelectorAll('.vid').forEach(x => x.play())
-
-  document.querySelectorAll('iframe').forEach(x => {
-    x.setAttribute('loading', 'lazy')
-  })
 
   document.querySelectorAll('.input-group.select select').forEach(x => {
     new Choices(x, {

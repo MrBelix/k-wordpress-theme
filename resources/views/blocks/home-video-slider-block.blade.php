@@ -3,8 +3,10 @@
     <div class="swiper desktop">
       <div class="swiper-wrapper">
         @foreach($videos as $video)
-          <div class="swiper-slide">
-            {!! $video['iframe'] !!}
+          <div class="swiper-slide" data-video-id="{{$video['iframe']}}">
+            <div class="img">
+              <img src="{{$video['image']['url']}}" alt="">
+            </div>
             <h3>{!! $video['title'] !!}</h3>
           </div>
         @endforeach
@@ -12,8 +14,11 @@
     </div>
     <div class="home-video-slider-block__list mobile">
       @for($i=0; $i < 2; $i++)
-        <div class="home-video-slider-block__item">
-          {!! $videos[$i]['iframe'] !!}
+        <div class="home-video-slider-block__item" data-video-id="{{$video['iframe']}}">
+          <div class="iframe"></div>
+          <div class="img">
+            <img src="{{$video['image']['url']}}" alt="">
+          </div>
           <h3>{!! $videos[$i]['title'] !!}</h3>
         </div>
       @endfor

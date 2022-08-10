@@ -9,7 +9,7 @@
     </div>
     <div class="main-event-block__block-info">
       <h2 class="desktop">
-        <span>{!! $event->getTitle() !!}}</span>
+        <span>{!! $event->getTitle() !!}</span>
       </h2>
       <div>
         <svg width="59" height="59" viewBox="0 0 59 59" fill="none" xmlns="http://www.w3.org/2000/svg">

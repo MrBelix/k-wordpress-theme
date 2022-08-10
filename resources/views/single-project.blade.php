@@ -4,7 +4,7 @@
   @include('partials.page-hero-section', $hero)
   <section class="single-project__section">
     <div class="single-project__slider">
-      <div class="swiper-main">
+      <div class="swiper-main swiper">
         <div class="swiper-wrapper">
           @foreach($project->getGallery() as $image)
             <div class="swiper-slide">
@@ -12,14 +12,11 @@
             </div>
           @endforeach
         </div>
-      </div>
-      <div class="swiper-preview">
-        <div class="swiper-wrapper">
-          @foreach($project->getGallery() as $image)
-            <div class="swiper-slide">
-              <img loading="lazy" src="{{$image['url']}}" alt="">
-            </div>
-          @endforeach
+        <div class="swiper-button swiper-button-prev">
+
+        </div>
+        <div class="swiper-button swiper-button-next">
+
         </div>
       </div>
     </div>

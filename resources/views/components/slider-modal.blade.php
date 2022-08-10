@@ -6,4 +6,10 @@
       </div>
     @endforeach
   </div>
+  <div class="swiper-button swiper-button-prev">
+
+  </div>
+  <div class="swiper-button swiper-button-next">
+
+  </div>
 </div>

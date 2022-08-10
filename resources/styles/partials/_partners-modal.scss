@@ -12,6 +12,17 @@
     display: flex;
     justify-content: space-between;
 
+    @include desktop {
+      &:after {
+        content: '';
+        display: block;
+        height: auto;
+        order: 2;
+        background-color: #fff;
+        width: 2px;
+      }
+    }
+
     @include mobile {
       flex-direction: column;
     }
@@ -25,13 +36,15 @@
       }
 
       @include desktop {
-        width: 46%;
+        width: 45%;
         padding: 60px 0;
       }
 
       &:first-child {
         font-size: 32px;
         font-weight: 500;
+        order: 1;
+
         @include mobile {
           font-size: 22px;
         }
@@ -39,16 +52,12 @@
 
       &:last-child {
         font-weight: 500;
-        font-size: 20px;
+        font-size: 24px;
+        order: 3;
 
         @include mobile {
           margin-top: 40px;
-        }
-
-        @include desktop {
-          padding-left: 35px;
-          border-left: 1px solid white;
-          font-size: 24px;
+          font-size: 20px;
         }
       }
     }
@@ -56,11 +65,29 @@
 
   &__footer {
     margin-top: 70px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+
+    @include desktop {
+      display: grid;
+      grid-template-columns: 1fr 0.5fr 1fr 0.5fr 1fr;
+
+      & > div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        &:nth-child(2) {
+          text-align: center;
+        }
+      }
+
+      & > svg {
+        margin: 0 auto;
+      }
+    }
 
     @include mobile {
+      display: flex;
+      justify-content: space-between;
       flex-direction: column;
       align-items: flex-start;
       margin-top: 60px;

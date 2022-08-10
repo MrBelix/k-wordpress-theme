@@ -17,6 +17,7 @@ class Form {
         nameSpan.innerText = '';
       }
     })
+
     this.$form.addEventListener('submit', e => {
       e.preventDefault();
       const elems = this.$form.querySelectorAll('input:not([name="search_terms"]), select')
@@ -40,7 +41,7 @@ class Form {
     elems.forEach(elem => {
       if (this.required.includes(elem.name)) {
         const parent = elem.closest('.input-group');
-
+        console.log(elem.name, parent, elem.value)
         if (!elem.value) {
           parent.classList.add('invalid');
           isValid = false;

@@ -1,4 +1,5 @@
 import Swiper from "swiper/bundle";
+import {Autoplay} from "swiper";
 
 class ImageSlider {
   constructor(selector) {
@@ -8,9 +9,15 @@ class ImageSlider {
 
   register() {
     new Swiper(this.selector, {
-      slidesPerView: 1,
       centeredSlides: this,
       loop: true,
+      modules: [
+        Autoplay
+      ],
+      slidesPerView: 1,
+      autoplay: {
+        delay: 2000,
+      },
       breakpoints: {
         1024: {
           slidesPerView: 3

@@ -1,7 +1,35 @@
 .single-project {
   .page-hero-section {
+    h2 {
+      font-size: 60px;
+      margin-top: 0;
+      margin-bottom: 5px;
+    }
+
+    h3 {
+      font-size: 36px;
+      margin: 0;
+    }
+
     @include mobile {
       display: none;
+    }
+  }
+
+  .single-project__content {
+    @include desktop {
+      h2 {
+        display: none;
+      }
+      h3 {
+        display: none;
+      }
+    }
+  }
+
+  .single-project__info {
+    @include desktop {
+      margin-top: 0 !important;
     }
   }
 
@@ -11,11 +39,16 @@
     margin:100px auto;
 
     @include desktop {
+      align-items: center;
+    }
+
+    @include desktop {
       max-width: 90%;
     }
 
     @include mobile {
       flex-direction: column;
+      margin-top: 0 !important;
     }
   }
 
@@ -115,6 +148,22 @@
       svg {
         height: 35px;
       }
+    }
+  }
+
+  .swiper-button {
+    color: white;
+
+    &-disabled {
+      display: none;
+    }
+  }
+
+  .swiper-slide {
+    height: auto;
+
+    img {
+      height: 100%;
     }
   }
 }

@@ -1,6 +1,10 @@
 <div class="single-project__content">
+  @if(!empty($title))
   <h2>{!! $title !!}</h2>
+  @endif
+  @if(!empty($distinct))
   <h3>{{$distinct}}</h3>
+    @endif
   <div class="single-project__info">
     @foreach($info as $key => $info)
       <div class="single-project__info-row">

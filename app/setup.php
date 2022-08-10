@@ -168,6 +168,7 @@ add_action('init', function () {
         'has_archive' => true,
         'supports' => [
             'title',
+            'thumbnail'
         ]
     ]);
 

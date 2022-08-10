@@ -28,7 +28,7 @@
 
   <section class="project-category__imgs desktop">
     <blockquote class="wp-block-quote">
-      <p>{{__('НАВІЩО МАЛЮВАТИ В УЯВІ, КОЛИ КРАЩЕ ПОБАЧИТИ ', 'sage')}}</p>
+      <p>{!! __('НАВІЩО МАЛЮВАТИ В УЯВІ,<br> КОЛИ КРАЩЕ ПОБАЧИТИ ', 'sage') !!}</p>
     </blockquote>
     <div class="project-category__imgs-wrapp">
       @foreach($links as $link)

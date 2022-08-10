@@ -13,19 +13,19 @@
       left: 0;
       right: 0;
       z-index: 2;
-      background: linear-gradient(178.13deg, rgba(21, 35, 43, 0) 38.13%, rgba(21, 35, 43, 0.89) 79.54%, #162833 98.42%);
-
-      .tax-project-category &{
-        background: linear-gradient(178.13deg, rgba(21, 35, 43, 0) 38.13%, rgba(21, 35, 43, 0.89) 79.54%, $background-color 98.42%);
-      }
+      background: linear-gradient(178.13deg,rgba(21,35,43,0) 38.13%,rgba(21,35,43,.89) 79.54%,#15232b 98.42%);
+      //
+      //.tax-project-category &{
+      //  background: linear-gradient(178.13deg, rgba(21, 35, 43, 0) 38.13%, rgba(21, 35, 43, 0.89) 79.54%, $background-color 98.42%);
+      //}
     }
 
     .back-button {
       position: absolute;
       z-index: 3;
-      background: linear-gradient(180deg, rgba(21, 35, 43, 0.1) 0%, rgba(21, 35, 43, 0.5) 100%);
+      background: linear-gradient(270deg,rgba(21,35,43,.1),rgb(21 35 43 / 60%));
+      padding: 10px 40px 10px 8vw;
       backdrop-filter: blur(1px);
-      padding: 10px 40px 10px 10vw;
       top: 20%;
 
       svg {
@@ -68,6 +68,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
     z-index: 3;
 
     @include desktop {

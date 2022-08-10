@@ -18,6 +18,7 @@ class VideoSliderBlock extends Block
             'videos' => array_map(function ($items) {
                 return [
                     'title' => $items['title'],
+                    'image' => $items['image'],
                     'iframe' => $items['iframe'],
                     'district' => config('districts')[$items['district']]
                 ];
@@ -33,6 +34,7 @@ class VideoSliderBlock extends Block
             ->addText('title')
             ->addRepeater('videos')
                 ->addText('title')
+                ->addImage('image')
                 ->addText('iframe')
                 ->addSelect('district', [
                     'choices' => array_map(function ($item) {
