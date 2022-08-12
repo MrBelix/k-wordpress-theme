@@ -15,7 +15,8 @@ class MainOptionsTab extends Partial
         $builder
             ->addTab('Main')
             ->addText('Phone')
-            ->addFile('EventsBackground');
+            ->addFile('EventsBackground')
+            ->addFile('EventsBackgroundMobile');
 
         return $builder;
     }

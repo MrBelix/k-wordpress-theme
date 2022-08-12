@@ -69,10 +69,10 @@
     }
 
     &-slide {
-
       @include mobile {
         padding: 0 26px;
       }
+
       h3, h4 {
         display: none;
         margin: 0;

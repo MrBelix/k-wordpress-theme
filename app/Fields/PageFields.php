@@ -14,7 +14,8 @@ class PageFields extends Field
 
         $fields->setLocation('post_type', '==', 'page');
 
-        $fields->addFile('background');
+        $fields->addFile('background')
+            ->addFile('background_mobile');
 
         return $fields->build();
     }

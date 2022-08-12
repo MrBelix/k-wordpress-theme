@@ -144,6 +144,15 @@
       }
     }
 
+    .current-menu-item {
+      a {
+        &:after {
+          background-color: white;
+          opacity: 1;
+        }
+      }
+    }
+
     a {
       position: relative;
       color: #fff;
@@ -171,7 +180,6 @@
         width: calc(100% + 30px);
         height: 3px;
         border-radius: 5px;
-        background-color: $color-primary;
         opacity: 0;
       }
 
@@ -180,6 +188,7 @@
 
         &:after {
           opacity: 1;
+          background-color: $color-primary;
         }
       }
     }

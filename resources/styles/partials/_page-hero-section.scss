@@ -1,25 +1,20 @@
 .page-hero-section {
   position: relative;
+  min-height: 100vh;
+  height: 100%;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    background: linear-gradient(178.13deg,rgba(21,35,43,0) 38.13%,rgba(21,35,43,.89) 79.54%,#15232b 98.42%);
+  }
 
   @include desktop {
-    min-height: 100vh;
-    height: 100%;
-
-    &::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      z-index: 2;
-      background: linear-gradient(178.13deg,rgba(21,35,43,0) 38.13%,rgba(21,35,43,.89) 79.54%,#15232b 98.42%);
-      //
-      //.tax-project-category &{
-      //  background: linear-gradient(178.13deg, rgba(21, 35, 43, 0) 38.13%, rgba(21, 35, 43, 0.89) 79.54%, $background-color 98.42%);
-      //}
-    }
-
     .back-button {
       position: absolute;
       z-index: 3;
@@ -39,6 +34,8 @@
       position: absolute;
       left: 0px;
       top: 30px;
+      z-index: 3;
+      background: linear-gradient(270deg,rgba(21,35,43,.1),rgb(21 35 43 / 60%));
 
       svg {
         height: 50px;
@@ -56,10 +53,6 @@
     right: 0;
     top: 0;
     z-index: 1;
-
-    @include mobile {
-      display: none;
-    }
   }
 
   &__content {
@@ -70,14 +63,7 @@
     justify-content: center;
     flex-direction: column;
     z-index: 3;
-
-    @include desktop {
-      position: absolute;
-    }
-
-    @include mobile {
-      padding-top: 80px;
-    }
+    position: absolute;
   }
 
   &__title {

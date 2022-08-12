@@ -5,7 +5,7 @@
   <section class="archive-project">
     @foreach($categories as $category)
       <a class="archive-project__item" href="{{get_term_link($category)}}">
-        <div class="project-category__imgs-item">{{$category->name}}</div>
+        <div class="project-category__imgs-item">{!! preg_replace('# #', '<br>', $category->name, 1) !!}</div>
         <img src="{{get_field('link_image', $category)['url']??null}}" alt="{{$category->name}}">
       </a>
       <div class="wp-block-button is-style-outline">

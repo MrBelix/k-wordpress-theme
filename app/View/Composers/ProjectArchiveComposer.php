@@ -14,7 +14,8 @@ class ProjectArchiveComposer extends Composer
             'whiteButtonList' => $this->link(),
             'categories' => get_terms([
                 'taxonomy' => 'project-category',
-                'hide_empty' => false,
+                'hide_empty' => true,
+                'hierarchical' => false,
             ])
         ];
     }

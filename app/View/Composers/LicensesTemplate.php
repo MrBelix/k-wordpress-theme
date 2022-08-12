@@ -20,6 +20,7 @@ class LicensesTemplate extends Composer
             'acknowledgments' => get_posts(['post_type' => 'acknowledgment']),
             'title' => get_the_title(),
             'background' => $fields['background']['url']??null,
+            'background_mobile' => $fields['background_mobile']['url']??null,
             'slider' => array_merge($fields['slider']??[], [
                 'projects' => array_map([$this, 'sliderMap'], $fields['slider']['projects']??[])
             ])

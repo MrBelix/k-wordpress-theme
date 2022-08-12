@@ -156,6 +156,7 @@ add_action('init', function () {
     [
         'label' => __('Category', 'sage'),
         'public' => true,
+        'hierarchical' => true,
         'meta_box_cb' => 'post_categories_meta_box'
     ]
     );

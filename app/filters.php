@@ -39,3 +39,17 @@ add_filter( 'wp_video_extensions',
         return $exts;
     }
 );
+
+add_filter('nav_menu_css_class' , function ($classes, $item) {
+    if ($item->url == '/#categories') {
+        $obj = get_queried_object();
+
+        if ($obj && !empty($obj->taxonomy) && $obj->taxonomy === 'project-category') {
+            $classes[] = 'current-menu-item';
+        } elseif ($obj && !empty($obj->post_type) && $obj->post_type == 'project') {
+            $classes[] = 'current-menu-item';
+        }
+    }
+
+    return $classes;
+} , 10 , 2);

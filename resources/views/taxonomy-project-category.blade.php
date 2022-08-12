@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+  @if(!$is_parent)
   @include('partials.page-hero-section', $hero)
   <section class="project-category">
     @while(have_posts()) @php(the_post())
@@ -13,7 +14,7 @@
           'title' => $project->getTitle(),
           'distinct' => $project->getDistrict(),
           'info' => $project->getInfo()
-        ])
+])
       </div>
     @endwhile
   </section>
@@ -39,5 +40,26 @@
       @endforeach
     </div>
   </section>
+  @endif
+
+  @else
+    <section class="project-category__imgs parent">
+      <div class="project-category__imgs-wrapp">
+        @foreach($children as $link)
+          <a href="{{get_term_link($link)}}">
+            <div class="project-category__imgs-item">
+              @if($link->nameS[0])
+                <h2>{!! $link->nameS[0] !!}</h2>
+              @endif
+              @if($link->nameS[1])
+                <h3>{!! $link->nameS[1] !!}</h3>
+                @endif
+            </div>
+            <img src="{{get_field('link_image', $link)['url']??null}}" alt="{{$link->name}}">
+          </a>
+        @endforeach
+      </div>
+      @include('partials.back-button')
+    </section>
   @endif
 @endsection

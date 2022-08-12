@@ -14,7 +14,9 @@ class CategoryFields extends Field
 
         $builder->setLocation('taxonomy', '==', 'project-category');
 
-        $builder->addImage('thumbnail')
+        $builder
+            ->addFile('thumbnail')
+            ->addFile('thumbnail_mobile')
             ->addImage('link_image')
             ->addTaxonomy('categories', [
                 'taxonomy' => 'project-category'

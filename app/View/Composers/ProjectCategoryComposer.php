@@ -14,12 +14,17 @@ class ProjectCategoryComposer extends Composer
     {
         $term = get_queried_object();
         $acf = get_fields($term);
+        $childs = get_term_children($term->term_id, 'project-category');
 
         return [
+            'is_parent' => count($childs) > 0,
             'hero' => [
                 'title' => $term->name,
                 'background' => $acf['thumbnail']['url']??'',
+                'background_mobile' => $acf['thumbnail']['url']??'',
+                'is_video' => true,
             ],
+            'children' => array_map([$this, 'childMap'], $childs),
             'links' => array_map(function ($id) {
                 $term = get_term($id);
                 $link = get_field('link_image', $term);
@@ -31,5 +36,12 @@ class ProjectCategoryComposer extends Composer
                 ];
             }, $acf['categories'])
         ];
+    }
+
+    private function childMap($item) {
+        $term = get_term($item);
+        $term->nameS = preg_split("# #", $term->name, 2);
+
+        return $term;
     }
 }

@@ -33,6 +33,10 @@ class BackButtonComposer extends Composer
             return '/event';
         }
 
+        if (!empty($post->taxonomy) && $post->taxonomy == 'project-category' && count(get_term_children($post->term_id,'project-category')) > 0) {
+            return  get_home_url() . '/#categories';
+        }
+
         return get_home_url();
     }
 }
