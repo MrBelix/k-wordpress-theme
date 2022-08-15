@@ -3,6 +3,9 @@
 @section('content')
   @include('partials.page-hero-section', $hero)
   <section class="single-project__section">
+    <div class="mobile">
+      @include('partials.back-button')
+    </div>
     <div class="single-project__slider">
       <div class="swiper-main swiper">
         <div class="swiper-wrapper">

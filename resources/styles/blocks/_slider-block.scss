@@ -3,11 +3,24 @@
     font-weight: 700;
     font-size: 30px;
     text-align: center;
-    margin: 30px 20px;
+    margin: 30px 20px 0;
 
     @include desktop {
       font-size: 55px;
-      margin: 150px 0 50px;
+      margin: 150px 0 15px;
+    }
+  }
+
+  & > &__subtitle {
+    font-size: 30px;
+    font-weight: 700;
+    text-align: center;
+    margin-top: 5px;
+    margin-bottom: 30px;
+
+    @include desktop {
+      font-size: 35px;
+      margin-bottom: 50px;
     }
   }
 

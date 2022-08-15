@@ -15,6 +15,7 @@ class SliderBlock extends Block
         $fields = get_fields();
         return [
             'title' => $fields['title']??null,
+            'subtitle' => $fields['subtitle']??null,
             'items' => $fields['items']??[],
         ];
     }
@@ -25,6 +26,7 @@ class SliderBlock extends Block
 
         $fields
             ->addText('title')
+            ->addText('subtitle')
             ->addRepeater('items')
             ->addImage('image')
             ->endRepeater();

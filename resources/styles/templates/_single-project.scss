@@ -38,6 +38,18 @@
     justify-content: space-between;
     margin:100px auto;
 
+    .back-button {
+      position: absolute;
+      left: 0px;
+      top: 30px;
+      z-index: 3;
+      background: linear-gradient(270deg,rgba(21,35,43,.1),rgb(21 35 43 / 60%));
+
+      svg {
+        height: 50px;
+      }
+    }
+
     @include desktop {
       align-items: center;
     }
@@ -49,6 +61,7 @@
     @include mobile {
       flex-direction: column;
       margin-top: 0 !important;
+      padding-top: 100px;
     }
   }
 
@@ -153,6 +166,12 @@
 
   .swiper-button {
     color: white;
+
+    @include mobile {
+      &:after {
+        font-size: 30px;
+      }
+    }
 
     &-disabled {
       display: none;

@@ -1,5 +1,5 @@
 @if($title)
-  <h2 class="categories-block__title">{{$title}}</h2>
+  <h2 class="categories-block__title">{!! $title !!}</h2>
 @endif
 <section class="categories-block" id="categories">
   @if($items)
