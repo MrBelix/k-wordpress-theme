@@ -1,0 +1,39 @@
+.language-switcher {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+
+  a {
+    text-decoration: none;
+    color: #fff;
+    transition: color ease-in-out 0.2s;
+
+    &:hover {
+      color: $color-primary;
+    }
+  }
+
+  .lang-item {
+    height: 55px;
+    display: flex;
+    font-weight: 700;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    order: 2;
+    margin: 0;
+  }
+
+  .current-lang {
+    width: 55px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.47);
+    order: 1;
+    margin-right: 5px;
+
+    & a:hover {
+      color: white;
+    }
+  }
+}

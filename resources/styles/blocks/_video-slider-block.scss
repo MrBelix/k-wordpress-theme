@@ -1,0 +1,162 @@
+.video-slider-block {
+  margin-bottom: 50px;
+  position: relative;
+  padding: 0 26px;
+
+  @include desktop {
+    background: #0A2332;
+    padding: 30px 0 100px;
+  }
+
+  &__wrapper {
+    @include desktop {
+      padding: 0 100px;
+    }
+  }
+
+  h2 {
+    text-align: center;
+    font-size: 48px;
+    font-weight: 700;
+    margin: 0 0 50px;
+
+    @include mobile {
+      font-size: 30px;
+      display: none;
+    }
+  }
+
+  .swiper {
+    position: static;
+
+    @include mobile  {
+      display: none;
+    }
+
+    &-button {
+      background: transparent;
+      height: 100%;
+      top: 0;
+      width: 90px;
+      color: white;
+      bottom: 0;
+      margin: 0;
+
+      &-disabled {
+        display: none;
+      }
+
+      &-prev {
+        left: 0;
+      }
+
+      &-next {
+        right: 0;
+      }
+    }
+    &-slide {
+      cursor: pointer;
+
+      h3,h4 {
+        margin: 0;
+      }
+
+      h3 {
+        font-size: 32px;
+        font-weight: 700;
+
+        @include mobile {
+          font-size: 20px;
+        }
+      }
+
+      h4 {
+        font-size: 24px;
+        font-weight: 500;
+        margin-top: 4px;
+
+        @include mobile {
+          font-size: 16px;
+        }
+      }
+
+      iframe {
+        margin-bottom: 0;
+        width: 100%;
+        pointer-events: none;
+      }
+    }
+  }
+
+  &__item {
+    margin-bottom: 45px;
+  }
+
+  &__desktop {
+    @include desktop {
+      display: none;
+    }
+
+    iframe {
+      width: 100%;
+      height: 50vw;
+    }
+
+    h3,h4 {
+      margin: 0;
+    }
+
+    h3 {
+      font-size: 32px;
+      font-weight: 700;
+
+      @include mobile {
+        font-size: 20px;
+      }
+    }
+
+    h4 {
+      font-size: 24px;
+      font-weight: 500;
+      margin-top: 4px;
+
+      @include mobile {
+        font-size: 16px;
+      }
+    }
+  }
+
+  .img {
+    position: relative;
+    pointer-events: none;
+
+    &:before {
+      content: '';
+      z-index: 2;
+      background-size: 100%;
+      background-image: url(~@images/play-btn.svg);
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 120px;
+      height: 120px;
+
+      @include mobile {
+        width: 60px;
+        height: 60px;
+      }
+    }
+
+    &:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background-color: black;
+      opacity: 0.2;
+    }
+  }
+}

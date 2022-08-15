@@ -1,0 +1,56 @@
+.custom-list-block {
+  margin: 100px 0;
+
+  @include mobile {
+    display: flex;
+    justify-content: center;
+    margin: 40px 0;
+
+    ul {
+      li {
+        margin-bottom: 15px;
+        font-size: 1.1rem;
+
+        @include mobile {
+          br {
+            display: none;
+          }
+        }
+
+        &::marker {
+          color: $color-primary;
+          font-size: 1em;
+        }
+      }
+    }
+  }
+
+  @include desktop {
+      margin: 130px 0;
+
+      ul {
+        display: flex;
+        justify-content: space-evenly;
+        margin: 0;
+        padding: 0;
+        font-size: 40px;
+        font-weight: 500;
+
+        @media (max-width: 1340px) {
+          font-size: 32px;
+        }
+          li {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 0;
+            text-align: center;
+            flex: 1 0 0px;
+
+            &::before {
+              content: url(~@images/image-section-marker.svg);
+            }
+          }
+      }
+    }
+}

@@ -1,0 +1,148 @@
+.home-video-slider-block {
+  margin: 100px 0 0;
+
+  @include mobile {
+    margin: 100px 0 0;
+  }
+
+  .img {
+    position: relative;
+    pointer-events: none;
+
+    &:before {
+      content: '';
+      z-index: 2;
+      background-size: 100%;
+      background-image: url(~@images/play-btn.svg);
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 120px;
+      height: 120px;
+
+      @include mobile {
+        width: 60px;
+        height: 60px;
+      }
+    }
+
+    &:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background-color: black;
+      opacity: 0.2;
+    }
+  }
+
+  &__links {
+    text-align: center;
+
+    @include mobile {
+      margin-top: 55px;
+    }
+  }
+
+  &__item {
+    margin-bottom: 45px;
+    position: relative;
+    width: 100%;
+    padding: 0 25px;
+
+    iframe {
+      width: 100%;
+      height: calc((100vw - 50px) * 0.5625);
+    }
+  }
+
+
+  .swiper {
+    padding: 5% 0;
+
+    iframe {
+      width: 100%;
+      pointer-events: none;
+    }
+
+    &-slide {
+      @include mobile {
+        padding: 0 26px;
+      }
+
+      h3, h4 {
+        display: none;
+        margin: 0;
+        text-align: center;
+      }
+
+      h3 {
+        margin-top: 50px;
+        font-size: 32px;
+
+        @include mobile {
+          font-size: 24px;
+          margin-top: 15px;
+        }
+      }
+
+      h4 {
+        font-size: 24px;
+
+        @include mobile {
+          display: none !important;
+        }
+      }
+
+
+      &-active {
+        z-index: 2;
+
+        h3, h4 {
+          display: block;
+        }
+
+          @include desktop {
+            transform: scale(1.2);
+          }
+        }
+
+        iframe {
+          //pointer-events: all;
+          @include desktop {
+            transform: scale(1.2);
+          }
+        }
+      }
+    }
+
+  &.modal {
+    margin: 0;
+    border-radius: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    max-width: none;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .modal__content {
+      overflow: unset;
+      max-height: none;
+      width: 80vw;
+      height: 45vw;
+    }
+
+    .modal__close {
+      @include mobile {
+        right: 0;
+        top: 0;
+      }
+    }
+  }
+}

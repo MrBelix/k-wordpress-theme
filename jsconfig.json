@@ -7,7 +7,9 @@
     "moduleResolution": "node",
     "paths": {
       "@scripts/*": ["./resources/scripts/*"],
-      "@styles/*": ["./resources/styles/*"]
+      "@styles/*": ["./resources/styles/*"],
+      "@fonts/*": ["./resources/fonts/*"],
+      "@images/*": ["./resources/images/*"]
     }
   },
   "exclude": ["./public", "./node_modules"]

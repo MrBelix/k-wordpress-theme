@@ -1,0 +1,116 @@
+.partners-modal {
+  h2 {
+    font-size: 48px;
+    font-weight: 700;
+
+    @include mobile {
+      display: none;
+    }
+  }
+
+  &__main {
+    display: flex;
+    justify-content: space-between;
+
+    @include desktop {
+      &:after {
+        content: '';
+        display: block;
+        height: auto;
+        order: 2;
+        background-color: #fff;
+        width: 2px;
+      }
+    }
+
+    @include mobile {
+      flex-direction: column;
+    }
+
+    & > div {
+
+      p {
+        font-size: inherit;
+        padding: 0;
+        font-weight: inherit;
+      }
+
+      @include desktop {
+        width: 45%;
+        padding: 60px 0;
+      }
+
+      &:first-child {
+        font-size: 32px;
+        font-weight: 500;
+        order: 1;
+
+        @include mobile {
+          font-size: 22px;
+        }
+      }
+
+      &:last-child {
+        font-weight: 500;
+        font-size: 24px;
+        order: 3;
+
+        @include mobile {
+          margin-top: 40px;
+          font-size: 20px;
+        }
+      }
+    }
+  }
+
+  &__footer {
+    margin-top: 70px;
+
+    @include desktop {
+      display: grid;
+      grid-template-columns: 1fr 0.5fr 1fr 0.5fr 1fr;
+
+      & > div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        &:nth-child(2) {
+          text-align: center;
+        }
+      }
+
+      & > svg {
+        margin: 0 auto;
+      }
+    }
+
+    @include mobile {
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+      align-items: flex-start;
+      margin-top: 60px;
+      margin-bottom: 60px;
+
+      svg {
+        display: none;
+      }
+
+      & > div {
+        margin: 5px 0;
+      }
+    }
+
+    h3, h4 {
+      margin: 0;
+      font-size: 22px;
+      font-weight: 500;
+    }
+
+    h3 {
+      color: $color-primary;
+      font-weight: 700;
+    }
+  }
+}

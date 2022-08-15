@@ -14,17 +14,19 @@ use function Roots\bundle;
  * @return void
  */
 add_action('wp_enqueue_scripts', function () {
-    bundle('app')->enqueue();
+
+    bundle('fonts')
+        ->enqueueCss();
+
+    bundle('app')
+        ->enqueue();
 }, 100);
 
-/**
- * Register the theme assets with the block editor.
- *
- * @return void
- */
 add_action('enqueue_block_editor_assets', function () {
-    bundle('editor')->enqueue();
+    bundle('editor')
+        ->enqueue();
 }, 100);
+
 
 /**
  * Register the initial theme setup.
@@ -55,7 +57,8 @@ add_action('after_setup_theme', function () {
      * @link https://developer.wordpress.org/reference/functions/register_nav_menus/
      */
     register_nav_menus([
-        'primary_navigation' => __('Primary Navigation', 'sage'),
+        'primary_navigation_left' => __('Primary Navigation Left', 'sage'),
+        'primary_navigation_right' => __('Primary Navigation Right', 'sage'),
     ]);
 
     /**
@@ -101,6 +104,10 @@ add_action('after_setup_theme', function () {
      * @link https://developer.wordpress.org/themes/advanced-topics/customizer-api/#theme-support-in-sidebars
      */
     add_theme_support('customize-selective-refresh-widgets');
+    add_theme_support('category-thumbnails');
+
+//    load_textdomain('sage', realpath(get_template_directory() . '/resources/lang/' . get_locale(). '.mo'));
+
 }, 20);
 
 /**
@@ -110,19 +117,92 @@ add_action('after_setup_theme', function () {
  */
 add_action('widgets_init', function () {
     $config = [
-        'before_widget' => '<section class="widget %1$s %2$s">',
-        'after_widget' => '</section>',
-        'before_title' => '<h3>',
-        'after_title' => '</h3>',
+        'before_widget' => null,
+        'after_widget' => null,
     ];
 
     register_sidebar([
-        'name' => __('Primary', 'sage'),
-        'id' => 'sidebar-primary',
+        'name' => __('Social media', 'sage'),
+        'id' => 'social-media-sidebar',
     ] + $config);
 
     register_sidebar([
-        'name' => __('Footer', 'sage'),
-        'id' => 'sidebar-footer',
+        'name' => __('Footer 1', 'sage'),
+        'id' => 'footer-col-1',
+    ] + $config);
+
+    register_sidebar([
+        'name' => __('Footer 2', 'sage'),
+        'id' => 'footer-col-2',
+    ] + $config);
+
+    register_sidebar([
+        'name' => __('Footer 3', 'sage'),
+        'id' => 'footer-col-3',
+    ] + $config);
+
+    register_sidebar([
+        'name' => __('Footer 4', 'sage'),
+        'id' => 'footer-col-4',
     ] + $config);
 });
+
+
+add_action('init', function () {
+
+
+    register_taxonomy('project-category',
+    'project',
+    [
+        'label' => __('Category', 'sage'),
+        'public' => true,
+        'hierarchical' => true,
+        'meta_box_cb' => 'post_categories_meta_box'
+    ]
+    );
+
+    register_post_type('project', [
+        'label' => __('Projects', 'sage'),
+        'menu_icon' => 'dashicons-admin-multisite',
+        'public' => true,
+        'menu_position' => 5,
+        'has_archive' => true,
+        'supports' => [
+            'title',
+            'thumbnail'
+        ]
+    ]);
+
+    register_post_type('event', [
+        'label' => __('Events', 'sage'),
+        'menu_icon' => 'dashicons-admin-multisite',
+        'public' => true,
+        'menu_position' => 5,
+        'supports' => [
+            'title',
+            'thumbnail'
+        ]
+    ]);
+
+    register_post_type('license', [
+        'label' => __('Licenses', 'sage'),
+        'menu_icon' => 'dashicons-media-default',
+        'menu_position' => 6,
+        'public' => true,
+        'supports' => [
+            'title',
+            'thumbnail'
+        ]
+    ]);
+
+    register_post_type('acknowledgment', [
+        'label' => __('Acknowledgments', 'sage'),
+        'menu_icon' => 'dashicons-media-default',
+        'menu_position' => 7,
+        'public' => true,
+        'supports' => [
+            'title',
+            'thumbnail'
+        ]
+    ]);
+}, 0);

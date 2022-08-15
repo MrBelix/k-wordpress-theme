@@ -24,6 +24,9 @@ class App extends Composer
     {
         return [
             'siteName' => $this->siteName(),
+            'navigation' => $this->navigation(),
+            'phone' => $this->phone(),
+            'phoneUrl' => $this->phoneUrl()
         ];
     }
 
@@ -35,5 +38,29 @@ class App extends Composer
     public function siteName()
     {
         return get_bloginfo('name', 'display');
+    }
+
+    private function navigation()
+    {
+        return [
+            'right' => [
+                'theme_location' => 'primary_navigation_right',
+                'container' => false
+            ],
+            'left' => [
+                'theme_location' => 'primary_navigation_left',
+                'container' => false
+            ]
+        ];
+    }
+
+    private function phone()
+    {
+        return get_field('phone', 'options');
+    }
+
+    private function phoneUrl()
+    {
+        return 'tel:' . str_replace(['(', ')', ' ', '-'], '', $this->phone());
     }
 }

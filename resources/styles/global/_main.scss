@@ -1,0 +1,78 @@
+html {
+  color: #FFFFFF;
+  font-family: 'Cera Pro', sans-serif;
+  font-size: 20px;
+}
+
+body {
+  //background: linear-gradient(180deg, #15232B 21.07%, #1D4359 51.56%, #18252D 72.87%);
+  background: $background-color;
+  overflow-x: hidden;
+
+  &.home, &.page-template-template-video, &.tax-project-category {
+    //background: $background-color;
+  }
+
+  &.modal-oppened {
+    overflow: hidden;
+  }
+}
+
+body {
+  * {
+    box-sizing: border-box;
+  }
+}
+
+.mobile {
+  @include desktop {
+    display: none !important;
+  }
+}
+
+.desktop {
+  @include mobile {
+    display: none !important;
+  }
+}
+
+.text-center {
+  text-align: center;
+}
+
+.color-primary {
+  color: $color-primary
+}
+
+.wp-block-image {
+  text-align: center;
+  padding: 26px;
+  width: 80%;
+  max-width: 1344px;
+  margin: 0 auto;
+
+  img {
+    width: 100%;
+    object-fit: cover;
+    display: block;
+  }
+}
+
+img {
+  display: block;
+  width: 100%;
+  object-fit: cover;
+}
+
+.home-content {
+  @include mobile {
+    padding: 0 25px;
+  }
+  @include desktop {
+    text-align: center !important;
+  }
+}
+
+.relative {
+  position: relative;
+}
