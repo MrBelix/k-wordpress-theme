@@ -26,7 +26,6 @@
           &-slide {
 
             &-active {
-              box-shadow: 0px 0px 20px #FFC60A;
               transform: scale(1.1);
             }
           }
@@ -58,6 +57,23 @@
       width: 100%;
 
       .swiper {
+
+        @include desktop {
+          &-button {
+            backdrop-filter: none;
+            background: transparent;
+
+            &:after {
+              font-size: 65px;
+            }
+            &-prev {
+              left: -10px;
+            }
+            &-next {
+              right: -10px;
+            }
+          }
+        }
 
         &-slide {
           padding-bottom: 90px;
