@@ -166,13 +166,19 @@
 .licenses-slider {
   .swiper {
     &-button {
-      background: rgba(255, 255, 255, 0.24);
-      backdrop-filter: blur(20px);
       border-radius: 5px;
       width: 53px;
       height: 53px;
       color: #fff;
       z-index: 10;
+
+      &-next {
+        right: -10px;
+      }
+
+      &-prev {
+        left: -10px;
+      }
 
       &.swiper-button-disabled {
         display: none;
@@ -212,11 +218,11 @@
         }
 
         &-prev {
-          left: -200px;
+          left: -100px;
         }
 
         &-next {
-          right: -200px;
+          right: -100px;
         }
       }
     }
