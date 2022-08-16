@@ -25,7 +25,7 @@ class AcknowledgmentsSlider {
       },
       breakpoints: {
         1024: {
-          slidesPerView: 3.5,
+          slidesPerView: 3,
           navigation: {
             enabled: true
           }

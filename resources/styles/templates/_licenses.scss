@@ -6,6 +6,7 @@
     margin: 0 auto;
     max-width: 1440px;
     align-items: center;
+    position: relative;
 
     @include mobile {
       text-align: center;
@@ -168,6 +169,39 @@
 
       &:after {
         font-size: 25px;
+      }
+    }
+  }
+}
+
+@include desktop {
+  .acknowledgments-slider {
+    position: relative;
+
+    .swiper {
+      //overflow: visible;
+      position: static;
+
+      &-container {
+        overflow: hidden;
+      }
+
+      &-button {
+        background: transparent;
+        backdrop-filter: none;
+        top: calc(50% + 50px);
+
+        &:after {
+          font-size: 65px;
+        }
+
+        &-prev {
+          left: -200px;
+        }
+
+        &-next {
+          right: -200px;
+        }
       }
     }
   }

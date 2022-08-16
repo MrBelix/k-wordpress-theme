@@ -9,13 +9,13 @@
   <div class="licenses-template__content">
     <section class="licenses-slider">
       <div class="swiper">
-        <div class="swiper-wrapper">
-          @foreach($licenses as $image)
-            <div class="swiper-slide">
-              <img loading="lazy" src="{{get_the_post_thumbnail_url($image)}}" alt="">
-            </div>
-          @endforeach
-        </div>
+          <div class="swiper-wrapper">
+            @foreach($licenses as $image)
+              <div class="swiper-slide">
+                <img loading="lazy" src="{{get_the_post_thumbnail_url($image)}}" alt="">
+              </div>
+            @endforeach
+          </div>
         <div class="swiper-button swiper-button-prev">
 
         </div>
