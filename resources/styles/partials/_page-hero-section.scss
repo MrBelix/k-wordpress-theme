@@ -32,13 +32,17 @@
   @include mobile {
     .back-button {
       position: absolute;
-      left: 0px;
-      top: 30px;
+      left: 26px;
+      top: 26px;
       z-index: 3;
-      background: linear-gradient(270deg,rgba(21,35,43,.1),rgb(21 35 43 / 60%));
+      background: rgba(0, 0, 0, 0.86);
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
 
       svg {
         height: 50px;
+        transform: translate(-12px, 3px);
       }
     }
   }

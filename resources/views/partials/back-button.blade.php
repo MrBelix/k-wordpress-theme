@@ -1,4 +1,5 @@
 <a class="back-button" href="{{$backUrl??'#'}}">
+  <div class="desktop">
   <svg viewBox="0 0 140 59" fill="none" xmlns="http://www.w3.org/2000/svg">
     <g filter="url(#filter0_f_521_3182)">
       <circle cx="29.5" cy="29.5" r="9.5" fill="#FFC60A"/>
@@ -13,4 +14,29 @@
       </filter>
     </defs>
   </svg>
+  </div>
+  <div class="mobile">
+    <svg width="108" height="59" viewBox="0 0 108 59" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <g filter="url(#filter0_d_170_3376)">
+        <path d="M25.2591 29.4697C24.9662 29.7626 24.9662 30.2374 25.2591 30.5303L30.0321 35.3033C30.325 35.5962 30.7998 35.5962 31.0927 35.3033C31.3856 35.0104 31.3856 34.5355 31.0927 34.2426L26.8501 30L31.0927 25.7574C31.3856 25.4645 31.3856 24.9896 31.0927 24.6967C30.7998 24.4038 30.325 24.4038 30.0321 24.6967L25.2591 29.4697ZM50.1052 29.25L25.7894 29.25V30.75L50.1052 30.75V29.25Z" fill="white"/>
+      </g>
+      <defs>
+        <filter id="filter0_d_170_3376" x="16" y="20" width="96" height="27" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+          <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+          <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+          <feOffset dy="4"/>
+          <feGaussianBlur stdDeviation="2"/>
+          <feComposite in2="hardAlpha" operator="out"/>
+          <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+          <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_170_3376"/>
+          <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_170_3376" result="shape"/>
+        </filter>
+        <filter id="filter1_f_170_3376" x="0" y="0" width="62" height="59" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+          <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+          <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+          <feGaussianBlur stdDeviation="10" result="effect1_foregroundBlur_170_3376"/>
+        </filter>
+      </defs>
+    </svg>
+  </div>
 </a>

@@ -83,7 +83,6 @@
       <div class="input-group textarea">
         <label for="comment">{{__('Коментар:')}}</label>
         <textarea id="comment" name="comment"></textarea>
-        <span class="error">{{__('Введіть дані для розрахунку!', 'sage')}}</span>
       </div>
     </div>
     <div class="wp-block-button">

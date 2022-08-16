@@ -98,6 +98,18 @@
     }
 
     .content-block {
+      p {
+        padding: 0;
+      }
+
+      h2, p {
+        margin-bottom: 30px;
+
+        @include desktop {
+          margin-bottom: 90px;
+        }
+      }
+
       @include desktop {
         order: 1;
         width: 50%;
